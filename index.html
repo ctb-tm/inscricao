@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTB | Inscrição</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ctb-green-light: #C3FE4D;
+            --ctb-green-dark: #2BA02D;
+            --ctb-blue-dark: #19305A;
+            --ctb-blue-10: rgba(25,48,90,.10);
+            --ctb-blue-03: rgba(25,48,90,.03);
+            --radius-lg: 24px;
+        }
+        *{box-sizing:border-box} body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,'Noto Sans','Apple Color Emoji','Segoe UI Emoji';background:linear-gradient(135deg,#f8fbff, #eef6ff)}
+        a{color:inherit}
+        .wrap{max-width:1200px;margin:24px auto;padding:16px}
+        /* Header */
+        .header{background:#fff;border-radius:var(--radius-lg);padding:28px;box-shadow:0 12px 32px rgba(25,48,90,.12);text-align:center;position:relative;overflow:hidden}
+        .header::after{content:"";position:absolute;inset:auto -60px -80px auto;width:220px;height:220px;background:radial-gradient(ellipse at center,var(--ctb-green-light),transparent 70%);filter:blur(20px);opacity:.5}
+        .brand{display:flex;flex-direction:column;align-items:center;gap:12px}
+        .brand img{width:120px;height:auto;display:block}
+        .heading{font-weight:800;font-size:clamp(28px,4vw,44px);color:var(--ctb-green-dark);letter-spacing:1px;-webkit-text-stroke:.6px rgba(255,255,255,.6);text-shadow:0 2px 0 rgba(255,255,255,.65)}
+        /* Menu */
+        .menu{display:flex;justify-content:center;margin-top:12px}
+        .btn{appearance:none;border:0;outline:0;cursor:pointer;border-radius:16px;padding:14px 22px;font-weight:700;letter-spacing:.3px;transition:.25s;box-shadow:0 10px 24px rgba(25,48,90,.18);background:var(--ctb-blue-dark);color:#fff;text-decoration:none}
+        .btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(25,48,90,.28);background:var(--ctb-green-dark)}
+        /* Card principal */
+        .card{margin-top:24px;background:var(--ctb-blue-10);border-radius:var(--radius-lg);overflow:hidden}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+        .left{background:var(--ctb-blue-dark);display:flex;align-items:center;justify-content:center;padding:28px}
+        .video{width:100%;max-width:520px;aspect-ratio:16/9;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+        .video video{width:100%;height:100%;object-fit:cover}
+        .right{background:var(--ctb-blue-03);padding:28px}
+        .box{background:#fff;border-radius:18px;padding:24px;box-shadow:0 10px 30px rgba(25,48,90,.10)}
+        .group{margin-bottom:18px}
+        .label{display:block;font-weight:700;color:var(--ctb-blue-dark);margin-bottom:8px}
+        .input{width:100%;padding:14px 16px;border:2px solid #e6eaf2;border-radius:14px;background:#f9fbfd;font-family:inherit;font-size:16px;transition:.2s}
+        .input:focus{border-color:var(--ctb-green-dark);background:#fff;box-shadow:0 0 0 4px rgba(43,160,45,.10)}
+        .cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+        .cat{position:relative;border:2px solid #e6eaf2;background:#f9fbfd;padding:14px;border-radius:14px;text-align:center;font-weight:700;color:#2b3445;cursor:pointer;transition:.2s}
+        .cat:hover{border-color:var(--ctb-green-dark);background:#f4fff4}
+        .cat input{display:none}
+        .cat.selected{background:var(--ctb-green-light);border-color:var(--ctb-green-dark);color:var(--ctb-blue-dark)}
+        .submit{width:100%;margin-top:8px;background:var(--ctb-green-light);color:var(--ctb-blue-dark);font-weight:800;border:0;border-radius:16px;padding:16px;cursor:pointer;box-shadow:0 12px 28px rgba(195,254,77,.35);transition:.25s}
+        .submit:hover{transform:translateY(-2px);background:var(--ctb-green-dark);color:#fff;box-shadow:0 16px 36px rgba(43,160,45,.35)}
+        .msg{display:none;margin-top:14px;border-radius:12px;padding:14px;font-weight:700;text-align:center}
+        .msg.ok{display:block;background:var(--ctb-green-light);color:var(--ctb-blue-dark)}
+        .msg.err{display:block;background:#ffebee;color:#c62828;border:2px solid #ef5350}
+        /* Valores */
+        .values{margin-top:18px;background:var(--ctb-blue-dark);border-radius:20px;padding:22px;color:#fff}
+        .values h3{margin:0 0 12px 0;text-align:center;font-size:22px;letter-spacing:.5px}
+        .vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+        .vbox{background:rgba(255,255,255,.10);border-radius:14px;padding:16px;text-align:center;backdrop-filter:blur(8px)}
+        .vbox h4{margin:0 0 6px 0;color:var(--ctb-green-light)}
+        .vbox p{margin:0;font-weight:800}
+        .pay{margin-top:16px;background:rgba(255,255,255,.10);border-radius:14px;padding:16px}
+        .pay h4{margin:0 0 10px 0;color:#fff}
+        .paygrid{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+        .pay .info{font-weight:600;color:#e8eef7;line-height:1.6}
+        .qrcode{width:120px;height:120px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(0,0,0,.25)}
+        .qrcode img{width:100px;height:100px;object-fit:contain}
+        /* Responsive */
+        @media (max-width: 900px){.grid{grid-template-columns:1fr}.vgrid{grid-template-columns:1fr}.cats{grid-template-columns:1fr}.paygrid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="brand">
+                <img src="ctb.png" alt="CTB - Clube dos Tenistas da Bahia">
+                <h1 class="heading">INSCRIÇÃO</h1>
+            </div>
+            <nav class="menu">
+                <a class="btn" href="regulamento.html">Regulamento</a>
+            </nav>
+        </header>
+
+        <main class="card">
+            <section class="grid">
+                <aside class="left">
+                    <div class="video">
+                        <video controls autoplay muted loop>
+                            <source src="video.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo HTML5.
+                        </video>
+                    </div>
+                </aside>
+                <section class="right">
+                    <form id="formInscricao" class="box">
+                        <div class="group">
+                            <label class="label" for="nome">Nome</label>
+                            <input id="nome" name="nome" class="input" type="text" required>
+                        </div>
+                        <div class="group">
+                            <label class="label" for="clube">Clube</label>
+                            <input id="clube" name="clube" class="input" type="text" required>
+                        </div>
+                        <div class="group">
+                            <span class="label">Inscreva-se na categoria</span>
+                            <div class="cats">
+                                <label class="cat"><input type="checkbox" name="categoria" value="Sub13">Sub13</label>
+                                <label class="cat"><input type="checkbox" name="categoria" value="Sub15">Sub15</label>
+                                <label class="cat"><input type="checkbox" name="categoria" value="Sub19">Sub19</label>
+                                <label class="cat"><input type="checkbox" name="categoria" value="Aberto A">Aberto A</label>
+                                <label class="cat"><input type="checkbox" name="categoria" value="Aberto B">Aberto B</label>
+                                <label class="cat"><input type="checkbox" name="categoria" value="Veterano">Veterano</label>
+                            </div>
+                        </div>
+                        <button class="submit" type="submit">Enviar Inscrição</button>
+                        <div id="mensagem" class="msg"></div>
+                    </form>
+
+                    <section class="values">
+                        <h3>VALORES</h3>
+                        <div class="vgrid">
+                            <div class="vbox"><h4>Estudante</h4><p>R$ 20,00</p></div>
+                            <div class="vbox"><h4>Adultos</h4><p>R$ 40,00</p></div>
+                        </div>
+                        <div class="pay">
+                            <h4>Pagamento</h4>
+                            <div class="paygrid">
+                                <div class="info">
+                                    <div><strong>Chave PIX:</strong> 770b97f8-18e8-4754-9a51-5dee2968a4d7</div>
+                                    <div><strong>Banco:</strong> Mercado Pago - 323</div>
+                                    <div><strong>Agência:</strong> 0001</div>
+                                    <div><strong>Conta Corrente:</strong> 8604599783-0</div>
+                                    <div><strong>CNPJ:</strong> 23.146.328/0001-16</div>
+                                </div>
+                                <div class="qrcode">
+                                    <img src="qrcode.png" alt="QR Code PIX">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbzq3J50mZmaHq97t8f0sGLRKF14856umOr9_0W5JGTPx7UKe3d8lDz7kbnp07ypMAMz/exec";
+        const form = document.getElementById('formInscricao');
+        const msg = document.getElementById('mensagem');
+
+        // estiliza seleção de categorias e limita 2
+        document.querySelectorAll('.cat').forEach(el => {
+            el.addEventListener('click', (e) => {
+                const input = el.querySelector('input');
+                const checked = document.querySelectorAll('.cat input:checked').length;
+                if(!input.checked && checked >= 2){
+                    e.preventDefault();
+                    el.classList.remove('selected');
+                    alert('Você pode selecionar no máximo 2 categorias.');
+                    return;
+                }
+                input.checked = !input.checked;
+                el.classList.toggle('selected', input.checked);
+            });
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const selecionadas = document.querySelectorAll('.cat input:checked').length;
+            if(selecionadas === 0){
+                showMsg('Por favor, selecione pelo menos uma categoria.', false);
+                return;
+            }
+            const btn = form.querySelector('button[type="submit"]');
+            btn.disabled = true; btn.textContent = 'Enviando...';
+            try{
+                const fd = new FormData(form);
+                const res = await fetch(scriptURL, {method:'POST', body: fd});
+                const data = await res.json();
+                if(data.result === 'success'){
+                    form.reset();
+                    document.querySelectorAll('.cat').forEach(c => c.classList.remove('selected'));
+                    showMsg(data.message || 'Inscrição enviada com sucesso!', true);
+                } else {
+                    throw new Error(data.message || 'Falha na resposta do servidor.');
+                }
+            } catch(err){
+                showMsg('Erro ao enviar inscrição: ' + err.message, false);
+            } finally {
+                btn.disabled = false; btn.textContent = 'Enviar Inscrição';
+            }
+        });
+
+        function showMsg(text, ok){
+            msg.textContent = text;
+            msg.className = 'msg ' + (ok ? 'ok' : 'err');
+            setTimeout(()=>{ msg.className='msg'; msg.textContent=''; }, 5000);
+        }
+    </script>
+</body>
+</html>

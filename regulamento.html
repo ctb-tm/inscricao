@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTB | Regulamento Oficial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root{
+            --ctb-green-light:#C3FE4D;--ctb-green-dark:#2BA02D;--ctb-blue-dark:#19305A;--ctb-blue-10:rgba(25,48,90,.10)
+        }
+        *{box-sizing:border-box}
+        body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,'Noto Sans';background:linear-gradient(135deg,#f8fbff,#eef6ff)}
+        .wrap{max-width:1100px;margin:24px auto;padding:16px}
+        .hero{position:relative;background:#fff;border-radius:24px;padding:36px;text-align:center;box-shadow:0 14px 38px rgba(25,48,90,.14);overflow:hidden}
+        .hero::after{content:"";position:absolute;inset:auto -80px -120px auto;width:260px;height:260px;background:radial-gradient(ellipse at center,var(--ctb-green-light),transparent 70%);filter:blur(24px);opacity:.55}
+        .back{position:absolute;top:18px;left:18px;background:var(--ctb-blue-dark);color:#fff;border-radius:14px;padding:10px 16px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px;box-shadow:0 10px 24px rgba(25,48,90,.22);transition:.25s}
+        .back:hover{background:var(--ctb-green-dark);transform:translateY(-2px)}
+        .hero img{width:120px;margin-bottom:12px}
+        h1{margin:8px 0 4px 0;font-size:clamp(28px,4vw,44px);color:var(--ctb-blue-dark);font-weight:800}
+        .subtitle{color:#5a6b86;font-weight:600}
+        .card{background:#fff;border-left:8px solid var(--ctb-blue-dark);border-radius:20px;box-shadow:0 12px 32px rgba(25,48,90,.10);padding:24px;margin:22px 0}
+        .card h2{display:flex;align-items:center;gap:10px;color:var(--ctb-blue-dark);font-size:22px;margin:0 0 14px 0}
+        .card h2 i{color:var(--ctb-green-dark)}
+        .card h3{color:var(--ctb-green-dark);margin:12px 0 8px 0}
+        ul{list-style:none;padding:0;margin:0}
+        li{background:rgba(25,48,90,.06);padding:12px 14px;border-radius:12px;border-left:4px solid var(--ctb-green-dark);margin-bottom:10px;font-weight:600}
+        table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08);margin:10px 0}
+        th,td{padding:12px;text-align:center;border-bottom:1px solid #edf0f5}
+        th{background:var(--ctb-blue-dark);color:#fff}
+        tr:nth-child(even){background:#f7f9fc}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+        .note{background:linear-gradient(135deg,var(--ctb-green-light),#fff);border:2px solid var(--ctb-green-dark);padding:10px;border-radius:12px;text-align:center;font-weight:700;color:var(--ctb-blue-dark)}
+        .footer{margin:28px 0;background:var(--ctb-blue-dark);color:#fff;border-radius:20px;padding:18px;text-align:center;font-weight:700}
+        @media(max-width:700px){.back{position:relative;left:auto;top:auto;margin-bottom:8px;display:inline-flex}}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header class="hero">
+        <a class="back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Voltar para Inscrição</a>
+        <img src="ctb.png" alt="Logo CTB">
+        <h1>Regulamento Oficial</h1>
+        <div class="subtitle">Circuito do Clube dos Tenistas da Bahia</div>
+    </header>
+
+    <section class="card">
+        <h2><i class="fa-solid fa-map-marker-alt"></i> Artigo 1º - Local, Data e Participação</h2>
+        <ul>
+            <li>Os jogos serão realizados no ginásio da AABB, sempre aos domingos, às 9:00, conforme calendário oficial.</li>
+            <li>A participação é aberta a qualquer pessoa de ambos os sexos, com idade mínima de 6 anos.</li>
+            <li>O torneio é composto por três divisões: 1ª, 2ª e 3ª Divisão.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2><i class="fa-solid fa-pencil-alt"></i> Artigo 2º - Inscrição e Divulgação</h2>
+        <ul>
+            <li>As inscrições deverão ser realizadas via PIX (71-99935-3004) até às 18h do sábado anterior ao evento.</li>
+            <li>Cada atleta poderá se inscrever em no máximo 2 divisões.</li>
+            <li>As tabelas de jogos serão divulgadas no sábado anterior, a partir das 22h.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2><i class="fa-solid fa-sitemap"></i> Artigo 3º - Formato da Competição</h2>
+        <h3>Seção I - Formação dos Grupos</h3>
+        <ul>
+            <li>O sorteio dos grupos seguirá o sistema "Snake System", de acordo com a posição dos atletas no ranking.</li>
+            <li>O objetivo é equilibrar tecnicamente os grupos, conforme modelos descritos no Anexo I.</li>
+        </ul>
+        <h3>Seção II - Sistema de Jogo</h3>
+        <ul>
+            <li>A fase inicial será em grupos de até 4 atletas, classificando-se os dois melhores para a fase eliminatória.</li>
+            <li>Todas as partidas serão disputadas em melhor de 5 sets de 11 pontos.</li>
+            <li>Apresentar-se 15 minutos antes; 2 minutos de tolerância após a chamada. Ausência resulta em W.O.</li>
+            <li>A tabela será formada entre 12 e 24 atletas por divisão.</li>
+            <li>Horários subsequentes são referenciais e podem sofrer alterações.</li>
+        </ul>
+        <h3>Seção III - Critérios de Desempate</h3>
+        <ul>
+            <li><strong>Dois atletas:</strong> Confronto direto.</li>
+            <li><strong>Três ou mais atletas:</strong> Índice de Desempate (ID = Partidas Pró / (Partidas Pró + Partidas Contra)). Persistindo, aplica-se aos pontos.</li>
+        </ul>
+        <h3>Seção IV - Fase Eliminatória</h3>
+        <ul>
+            <li>Até 16 atletas: inicia nas Quartas de Final.</li>
+            <li>Até 24 atletas: inicia nas Oitavas de Final.</li>
+            <li>Sem disputa de 3º lugar; semifinalistas eliminados são 3º colocados.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2><i class="fa-solid fa-star"></i> Artigo 4º - Sistema de Pontuação</h2>
+        <h3>Pontuação por Resultado das Partidas</h3>
+        <table>
+            <thead><tr><th>Resultado</th><th>Vencedor</th><th>Perdedor</th></tr></thead>
+            <tbody>
+                <tr><td>3 x 0</td><td>+5 pts</td><td>+0 pts</td></tr>
+                <tr><td>3 x 1</td><td>+4 pts</td><td>+1 pt</td></tr>
+                <tr><td>3 x 2</td><td>+3 pts</td><td>+2 pts</td></tr>
+            </tbody>
+        </table>
+        <h3>Pontuação por Fase Alcançada</h3>
+        <div class="grid">
+            <div>
+                <table>
+                    <thead><tr><th>Até 16 atletas</th><th>Pontos</th></tr></thead>
+                    <tbody>
+                        <tr><td>Campeão</td><td>265 / 190 / 115</td></tr>
+                        <tr><td>Vice-Campeão</td><td>260 / 185 / 110</td></tr>
+                        <tr><td>Semifinal</td><td>250 / 175 / 100</td></tr>
+                        <tr><td>Quartas</td><td>235 / 160 / 85</td></tr>
+                        <tr><td>Classificação</td><td>215 / 140 / 65</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <thead><tr><th>Até 24 atletas</th><th>Pontos</th></tr></thead>
+                    <tbody>
+                        <tr><td>Campeão</td><td>265 / 190 / 115</td></tr>
+                        <tr><td>Vice-Campeão</td><td>260 / 185 / 110</td></tr>
+                        <tr><td>Semifinal</td><td>250 / 175 / 100</td></tr>
+                        <tr><td>Quartas</td><td>235 / 160 / 85</td></tr>
+                        <tr><td>Oitavas</td><td>215 / 140 / 65</td></tr>
+                        <tr><td>Classificação</td><td>190 / 115 / 40</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="note">Pontos listados para 1ª / 2ª / 3ª Divisão, respectivamente.</div>
+    </section>
+
+    <section class="card">
+        <h2><i class="fa-solid fa-gavel"></i> Artigo 5º - Regras Especiais</h2>
+        <ul>
+            <li><strong>Ascensão:</strong> Campeão sobe se vencer pelo menos 2 jogos contra atletas da divisão superior; vice recebe +10 pontos bônus.</li>
+            <li><strong>Duas divisões:</strong> Pontua apenas a melhor campanha. Empate: mais sets vencidos; depois pontos totais.</li>
+            <li><strong>Jogadores extras:</strong> Não ranqueados só entram no ranking se ao menos chegarem às Quartas.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2><i class="fa-solid fa-info-circle"></i> Artigo 6º - Disposições Gerais</h2>
+        <ul>
+            <li><strong>Uniforme:</strong> Camisa com manga, short/saia, tênis de borracha.</li>
+            <li><strong>Equipamentos:</strong> Raquetes aprovadas pela ITTF.</li>
+            <li><strong>Arbitragem:</strong> Feita pelos atletas perdedores da rodada anterior.</li>
+            <li><strong>Premiação:</strong> Medalhas aos 4 primeiros de cada divisão.</li>
+            <li><strong>Coordenação:</strong> Prof. Ângelo Neto.</li>
+            <li><strong>Casos omissos:</strong> Decisão da organização.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2><i class="fa-solid fa-trophy"></i> Artigo 7º - Campeão Geral do Ano</h2>
+        <ul>
+            <li>Título ao atleta com maior pontuação ao fim das 10 etapas.</li>
+            <li>Vantagem matemática irreversível permite ausência em até 2 etapas sem perder o direito ao título.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2><i class="fa-solid fa-project-diagram"></i> ANEXO I - Snake System</h2>
+        <div class="grid">
+            <div>
+                <table>
+                    <thead><tr><th>Formato 16 (4x4)</th><th>Ranking</th></tr></thead>
+                    <tbody>
+                        <tr><td>A</td><td>1, 8, 9, 16</td></tr>
+                        <tr><td>B</td><td>2, 7, 10, 15</td></tr>
+                        <tr><td>C</td><td>3, 6, 11, 14</td></tr>
+                        <tr><td>D</td><td>4, 5, 12, 13</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <thead><tr><th>Formato 24 (8x3)</th><th>Ranking</th></tr></thead>
+                    <tbody>
+                        <tr><td>A</td><td>1, 16, 17</td></tr>
+                        <tr><td>B</td><td>2, 15, 18</td></tr>
+                        <tr><td>C</td><td>3, 14, 19</td></tr>
+                        <tr><td>D</td><td>4, 13, 20</td></tr>
+                        <tr><td>E</td><td>5, 12, 21</td></tr>
+                        <tr><td>F</td><td>6, 11, 22</td></tr>
+                        <tr><td>G</td><td>7, 10, 23</td></tr>
+                        <tr><td>H</td><td>8, 9, 24</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">Clube dos Tenistas da Bahia • Regulamento 2025</footer>
+</div>
+</body>
+</html>
