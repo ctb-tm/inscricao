@@ -164,8 +164,7 @@
     </div>
 
     <script>
-        // Substitua este scriptURL pelo endereço do seu Google Apps Script configurado para salvar dados no Google Sheets da conta pfeira@gmail.com
-        const scriptURL = "INSIRA_AQUI_A_URL_DO_SEU_SCRIPT_GOOGLE_SHEETS";
+        const scriptURL = "https://script.google.com/macros/s/AKfycby0iMy6ybDfZb0iibkvIf5fkhViDlNqFdgJqPQeSjbhxI_XNyy0sHaP82G4B_RSGXpQiQ/exec";
         const form = document.getElementById('formInscricao');
         const msg = document.getElementById('mensagem');
         document.querySelectorAll('.cat').forEach(el => {
@@ -190,4 +189,29 @@
                 return;
             }
             const btn = form.querySelector('button[type="submit"]');
-            btn.disabled = true; btn.textContent = 'En
+            btn.disabled = true; btn.textContent = 'Enviando...';
+            try{
+                const fd = new FormData(form);
+                const res = await fetch(scriptURL, {method:'POST', body: fd});
+                const data = await res.json();
+                if(data.result === 'success'){
+                    form.reset();
+                    document.querySelectorAll('.cat').forEach(c => c.classList.remove('selected'));
+                    showMsg(data.message || 'Inscrição enviada com sucesso!', true);
+                } else {
+                    throw new Error(data.message || 'Falha na resposta do servidor.');
+                }
+            } catch(err){
+                showMsg('Erro ao enviar inscrição: ' + err.message, false);
+            } finally {
+                btn.disabled = false; btn.textContent = 'Enviar Inscrição';
+            }
+        });
+        function showMsg(text, ok){
+            msg.textContent = text;
+            msg.className = 'msg ' + (ok ? 'ok' : 'err');
+            setTimeout(()=>{ msg.className='msg'; msg.textContent=''; }, 5000);
+        }
+    </script>
+</body>
+</html>
