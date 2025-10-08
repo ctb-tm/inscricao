@@ -16,7 +16,8 @@
             --ctb-blue-03: rgba(25,48,90,.03);
             --radius-lg: 24px;
         }
-        *{box-sizing:border-box} body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,'Noto Sans','Apple Color Emoji','Segoe UI Emoji';background:linear-gradient(135deg,#f8fbff, #eef6ff)}
+        *{box-sizing:border-box}
+        body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,'Noto Sans','Apple Color Emoji','Segoe UI Emoji';background:linear-gradient(135deg,#f8fbff, #eef6ff)}
         a{color:inherit}
         .wrap{max-width:1200px;margin:24px auto;padding:16px}
         /* Header */
@@ -32,8 +33,8 @@
         /* Card principal */
         .card{margin-top:24px;background:var(--ctb-blue-10);border-radius:var(--radius-lg);overflow:hidden}
         .grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
-        .left{background:var(--ctb-blue-dark);display:flex;align-items:center;justify-content:center;padding:28px}
-        .video{width:100%;max-width:520px;aspect-ratio:16/9;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+        .left{background:var(--ctb-blue-dark);display:flex;flex-direction:column;justify-content:flex-start;align-items:center;padding:28px 28px 0 28px}
+        .video{width:100%;max-width:520px;aspect-ratio:16/9;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.35);margin-top:0;}
         .video video{width:100%;height:100%;object-fit:cover}
         .right{background:var(--ctb-blue-03);padding:28px}
         .box{background:#fff;border-radius:18px;padding:24px;box-shadow:0 10px 30px rgba(25,48,90,.10)}
@@ -146,8 +147,7 @@
         const scriptURL = "https://script.google.com/macros/s/AKfycbzq3J50mZmaHq97t8f0sGLRKF14856umOr9_0W5JGTPx7UKe3d8lDz7kbnp07ypMAMz/exec";
         const form = document.getElementById('formInscricao');
         const msg = document.getElementById('mensagem');
-
-        // estiliza seleção de categorias e limita 2
+        // Estiliza seleção de categorias e limita 2
         document.querySelectorAll('.cat').forEach(el => {
             el.addEventListener('click', (e) => {
                 const input = el.querySelector('input');
@@ -162,7 +162,6 @@
                 el.classList.toggle('selected', input.checked);
             });
         });
-
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const selecionadas = document.querySelectorAll('.cat input:checked').length;
@@ -189,7 +188,6 @@
                 btn.disabled = false; btn.textContent = 'Enviar Inscrição';
             }
         });
-
         function showMsg(text, ok){
             msg.textContent = text;
             msg.className = 'msg ' + (ok ? 'ok' : 'err');
