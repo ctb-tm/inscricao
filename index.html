@@ -18,20 +18,40 @@
         }
         *{box-sizing:border-box}
         body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,'Noto Sans','Apple Color Emoji','Segoe UI Emoji';background:linear-gradient(135deg,#f8fbff, #eef6ff)}
-        a{color:inherit}
+        a{color:inherit;text-decoration:none}
         .wrap{max-width:1200px;margin:24px auto;padding:16px}
         /* Header */
-        .header{background:#fff;border-radius:var(--radius-lg);padding:28px;box-shadow:0 12px 32px rgba(25,48,90,.12);text-align:center;position:relative;overflow:hidden}
-        .header::after{content:"";position:absolute;inset:auto -60px -80px auto;width:220px;height:220px;background:radial-gradient(ellipse at center,var(--ctb-green-light),transparent 70%);filter:blur(20px);opacity:.5}
-        .brand{display:flex;flex-direction:column;align-items:center;gap:12px}
-        .brand img{width:120px;height:auto;display:block}
-        .heading{font-weight:800;font-size:clamp(28px,4vw,44px);color:var(--ctb-green-dark);letter-spacing:1px;-webkit-text-stroke:.6px rgba(255,255,255,.6);text-shadow:0 2px 0 rgba(255,255,255,.65)}
-        /* Menu */
-        .menu{display:flex;justify-content:center;margin-top:12px}
-        .btn{appearance:none;border:0;outline:0;cursor:pointer;border-radius:16px;padding:14px 22px;font-weight:700;letter-spacing:.3px;transition:.25s;box-shadow:0 10px 24px rgba(25,48,90,.18);background:var(--ctb-blue-dark);color:#fff;text-decoration:none}
-        .btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(25,48,90,.28);background:var(--ctb-green-dark)}
+        .header{
+            background:#fff;
+            border-radius:var(--radius-lg);
+            padding:12px 24px;
+            box-shadow:0 8px 24px rgba(25,48,90,.07);
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:20px;
+            margin-bottom:16px;
+            min-height:74px;
+        }
+        .header-logo{
+            width:60px;
+            height:auto;
+            display:block;
+        }
+        .header-title{
+            font-weight:800;
+            font-size:clamp(20px,3vw,32px);
+            color:var(--ctb-green-dark);
+            letter-spacing:1px;
+            -webkit-text-stroke:.5px rgba(255,255,255,.5);
+            text-shadow:0 1.5px 0 rgba(255,255,255,.57);
+            flex: 1;
+            text-align:center;
+        }
+        .btn{appearance:none;border:0;outline:0;cursor:pointer;border-radius:14px;padding:11px 22px;font-weight:700;letter-spacing:.3px;transition:.25s;box-shadow:0 5px 18px rgba(25,48,90,.17);background:var(--ctb-blue-dark);color:#fff;white-space:nowrap;margin-left:auto}
+        .btn:hover{transform:translateY(-2px);background:var(--ctb-green-dark);box-shadow:0 10px 23px rgba(25,48,90,.22);}
         /* Card principal */
-        .card{margin-top:24px;background:var(--ctb-blue-10);border-radius:var(--radius-lg);overflow:hidden}
+        .card{margin-top:0;background:var(--ctb-blue-10);border-radius:var(--radius-lg);overflow:hidden}
         .grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
         .left{background:var(--ctb-blue-dark);display:flex;flex-direction:column;justify-content:flex-start;align-items:center;padding:28px 28px 0 28px}
         .video{width:100%;max-width:520px;aspect-ratio:16/9;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.35);margin-top:0;}
@@ -66,19 +86,22 @@
         .qrcode{width:120px;height:120px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(0,0,0,.25)}
         .qrcode img{width:100px;height:100px;object-fit:contain}
         /* Responsive */
-        @media (max-width: 900px){.grid{grid-template-columns:1fr}.vgrid{grid-template-columns:1fr}.cats{grid-template-columns:1fr}.paygrid{grid-template-columns:1fr}}
+        @media (max-width: 900px){
+            .grid{grid-template-columns:1fr}
+            .vgrid{grid-template-columns:1fr}
+            .cats{grid-template-columns:1fr}
+            .paygrid{grid-template-columns:1fr}
+            .header{flex-direction:column;gap:10px;min-height:unset;}
+            .header-title{text-align:center;}
+        }
     </style>
 </head>
 <body>
     <div class="wrap">
         <header class="header">
-            <div class="brand">
-                <img src="ctb.png" alt="CTB - Clube dos Tenistas da Bahia">
-                <h1 class="heading">INSCRIÇÃO</h1>
-            </div>
-            <nav class="menu">
-                <a class="btn" href="regulamento.html">Regulamento</a>
-            </nav>
+            <img src="ctb.png" alt="CTB - Clube dos Tenistas da Bahia" class="header-logo">
+            <span class="header-title">INSCRIÇÃO</span>
+            <a class="btn" href="regulamento.html">Regulamento</a>
         </header>
 
         <main class="card">
