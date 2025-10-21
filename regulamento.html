@@ -133,6 +133,12 @@
             color: var(--cor-texto-suave);
             font-size: 1rem;
         }
+        
+        /* Parágrafos dentro do Artigo 5 */
+        .article-box p {
+            margin-bottom: 15px;
+        }
+
 
         ul, ol {
             padding-left: 20px;
@@ -259,6 +265,8 @@
             vertical-align: top;
             padding-top: 15px;
             background-color: var(--cor-fundo);
+            font-weight: 600;
+            color: var(--cor-texto-suave);
         }
         
         /* --- FIM DOS NOVOS ESTILOS --- */
@@ -332,7 +340,7 @@
             }
             .page {
                 display: block !important;
-                animation: none !important;
+                animation: none !impo!important;
             }
             h2, h3 {
                 page-break-before: auto;
@@ -390,16 +398,16 @@
 
     <div class="article-box">
         <h2>Artigo 2º - Inscrição e Divulgação</h2>
-        <p><strong>§1º:</strong> As inscrições deverão ser realizadas via PIX na página do evento no site ctb-ba.com.br até às 18h do dia 23/10 - quinta-feira.</p>
-        <p><strong>§2º:</strong> Cada atleta poderá se inscrever em no máximo 2 (duas) categorias por etapa.</p>
-        <p><strong>§3º:</strong> As tabelas de jogos (formato dos grupos e confrontos) serão geradas pelo sistema na sexta-feira anterior ao evento as 18hs e podem ser consultadas online ou exportadas em PDF.</p>
+        <p><strong>§1º:</strong> As inscrições deverão ser realizadas via PIX na página do evento no site ctb-ba.com.br até às 18h do dia anterior ao evento.</p>
+        <p><strong>§2º:</strong> Cada atleta poderá se inscrever em no máximo 1 (uma) categoria por etapa.</p>
+        <p><strong>§3º:</strong> As tabelas de jogos (formato dos grupos e confrontos) serão geradas pelo sistema após o início do torneio e podem ser consultadas online ou exportadas em PDF.</p>
     </div>
 
     <div class="article-box">
         <h2>Artigo 3º - Formato da Competição</h2>
 
         <h3>Seção I - Formação dos Grupos</h3>
-        <p><strong>§1º:</strong> O sorteio dos grupos seguirá o sistema <strong>"Snake System"</strong>, distribuindo os atletas com base na sua posição no ranking FTMBA e sorteio para não federados. O objetivo é equilibrar tecnicamente os grupos.</p>
+        <p><strong>§1º:</strong> O sorteio dos grupos seguirá o sistema <strong>"Snake System"</strong>, distribuindo os atletas com base na sua posição no ranking inicial informado no cadastro. O objetivo é equilibrar tecnicamente os grupos.</p>
         
         <div class="highlight-box">
              <table>
@@ -434,7 +442,7 @@
                      </tr>
                       <tr>
                          <td><strong>N > 24 atletas</strong></td>
-                         <td colspan="2">O sistema não suporta mais de 24 atletas por categoria.</td>
+                         <td colspan="2">A categoria será limitada aos 24 primeiros atletas com inscrição confirmada (via PIX). Os demais inscritos entrarão em lista de espera ou terão o valor reembolsado integralmente. A organização não realizará a categoria com mais de 24 atletas.</td>
                      </tr>
                  </tbody>
              </table>
@@ -443,7 +451,8 @@
         <h3>Seção II - Sistema de Jogo</h3>
         <p><strong>§1º:</strong> Todas as partidas, tanto na fase de grupos quanto na fase eliminatória, serão disputadas em <strong>melhor de 5 sets</strong>, vencendo o atleta que primeiro ganhar 3 sets.</p>
         <p><strong>§2º:</strong> Cada set é disputado até 11 pontos, sendo necessário abrir 2 pontos de diferença em caso de empate 10-10.</p>
-        <p><strong>§3º:</strong> Os atletas deverão apresentar-se 15 minutos antes do horário previsto para o seu jogo. Haverá uma tolerância de 2 minutos após a chamada. A ausência resultará em derrota por <strong>W.O.</strong> (Walkover), com placar registado como 0x3 (0-11, 0-11, 0-11).</p>
+        
+        <p><strong>§3º:</strong> Os atletas deverão apresentar-se 15 minutos antes do horário previsto para o seu jogo. Após a chamada oficial para a partida, haverá uma tolerância máxima de 10 (dez) minutos. A ausência após este período resultará em derrota por <strong>W.O.</strong> (Walkover), com placar registado como 0x3 (0-11, 0-11, 0-11).</p>
         
         <div class="mini-box">
             <table class="tabela-contorno">
@@ -467,6 +476,9 @@
             </table>
             <p class="note">Nota: A ordem exata pode variar em grupos com W.O. ou número diferente de 3 ou 4 atletas.</p>
         </div>
+        
+        <p><strong>§5º:</strong> O atleta que sofrer derrota por W.O. (ausência injustificada) em qualquer partida da fase de grupos será automaticamente eliminado da categoria. Todos os seus resultados anteriores e jogos futuros dentro do grupo serão anulados para efeito de classificação e desempate dos demais atletas.</p>
+
 
         <h3>Seção III - Critérios de Desempate (Fase de Grupos)</h3>
         <p>A classificação dentro de cada grupo será determinada pela <strong>Pontuação de Bónus</strong> (ver Artigo 4º, Subseção A).</p>
@@ -650,12 +662,19 @@
 
     <div class="article-box">
         <h2>Artigo 5º - Disposições Gerais</h2>
-        <p><strong>Uniforme:</strong> Obrigatório o uso de camisa com manga (qualquer cor exceto branca ou laranja), short/saia e tênis apropriado.</p>
-        <p><strong>Equipamentos:</strong> Permitidas apenas raquetes aprovadas pela ITTF. As bolas do evento serão SANWEI ABS 3 ESTRELAS</p>
-        <p><strong>Arbitragem:</strong> A arbitragem das partidas será realizada, preferencialmente, pelos atletas que perderam na rodada anterior na mesma mesa, ou conforme designado pela organização. Súmulas em branco serão fornecidas (geradas pelo sistema).</p>
-        <p><strong>Premiação:</strong> Serão entregues medalhas aos quatro primeiros colocados de cada categoria (Campeão, Vice e os dois Semifinalistas).</p>
-        <p><strong>Coordenação:</strong> A coordenação geral do torneio é de responsabilidade de Paulo Carneiro.</p>
-        <p><strong>Casos Omissos:</strong> Situações não previstas neste regulamento serão decididas pela coordenação do torneio.</p>
+        
+        <p><strong>§1º (Uniforme):</strong> Obrigatório o uso de camisa com manga (qualquer cor exceto branca ou laranja), short/saia e tênis apropriado.</p>
+        <p><strong>§2º (Equipamentos):</strong> Permitidas apenas raquetes aprovadas pela ITTF.</p>
+        <p><strong>§3º (Arbitragem):</strong> A arbitragem das partidas será realizada, preferencialmente, pelos atletas que perderam na rodada anterior na mesma mesa, ou conforme designado pela organização. Súmulas em branco serão fornecidas (geradas pelo sistema).</p>
+        <p><strong>§4º (Premiação):</strong> Serão entregues medalhas aos quatro primeiros colocados de cada categoria (Campeão, Vice e os dois Semifinalistas).</p>
+        
+        <p><strong>§5º (Pedido de Tempo):</strong> Cada atleta (ou dupla) terá direito a 1 (um) pedido de tempo técnico por partida, com duração máxima de 1 (um) minuto.</p>
+        <p><strong>§6º (Troca de Equipamento):</strong> Não será permitida a troca da raquete durante uma partida, exceto se esta for acidentalmente danificada de forma que não possa ser utilizada. Qualquer troca deverá ser imediatamente comunicada e autorizada pela coordenação do torneio.</p>
+        
+        <p><strong>§7º (Coordenação):</strong> A coordenação geral do torneio é de responsabilidade de Paulo Carneiro.</p>
+        
+        <p><strong>§8º (Regras Gerais ITTF/CBTM):</strong> A competição reger-se-á pelas regras oficiais da Federação Internacional de Tênis de Mesa (ITTF), e suas adaptações pela Confederação Brasileira de Tênis de Mesa (CBTM), aplicando-se este regulamento para os casos específicos aqui descritos e cabendo à Coordenação a decisão sobre casos omissos.</p>
+        
     </div>
 
     <p class="footer"><em>Clube dos Tenistas da Bahia - Regulamento (Versão do Sistema) - 2025</em></p>
