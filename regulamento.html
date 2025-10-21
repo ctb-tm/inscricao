@@ -240,14 +240,14 @@
              font-size: 0.95rem; /* Fonte ligeiramente menor dentro dos boxes */
         }
         
-        /* --- NOVO ESTILO: TABELA COM CONTORNO VERTICAL --- */
+        /* --- ESTILO: TABELA COM CONTORNO FECHADO --- */
         
-        /* Adiciona a borda externa completa */
+        /* Adiciona a borda externa (frame) */
         .tabela-contorno {
             border: 1px solid var(--cor-borda);
         }
         
-        /* Adiciona as bordas verticais (esquerda e direita) */
+        /* Adiciona as bordas verticais internas */
         .tabela-contorno th,
         .tabela-contorno td {
             border-left: 1px solid var(--cor-borda);
@@ -316,8 +316,9 @@
                 border: 1px solid #eee;
                 padding: 10px;
             }
+            /* Força bordas fechadas na impressão */
             .tabela-contorno, .tabela-contorno th, .tabela-contorno td {
-                 border: 1px solid #999 !important; /* Força bordas na impressão */
+                 border: 1px solid #999 !important; 
             }
             nav, .control-panel, .form-group, button, .alert-info, .footer {
                 display: none;
@@ -537,7 +538,7 @@
         <h2>Artigo 4º - Sistema de Pontuação</h2>
 
         <h3>Subseção A - Pontuação por Resultado das Partidas (Bónus)</h3>
-        <p>Esta pontuação é utilizada para a classificação nos grupos e para o cálculo acumulado do ranking final. Aplica-se a <strong>todas</strong> as partidas (fase de grupos e eliminatórias).</p>
+        <p>Esta pontuação é utilizada para a classificação nos grupos e para o cálculo acumulado do ranking final. Aplica-se a <strong>todas</strong> as partidas (fase de groups e eliminatórias).</p>
         <table>
             <thead>
                 <tr>
