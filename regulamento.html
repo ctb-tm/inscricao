@@ -82,7 +82,7 @@
             margin-bottom: 15px;
         }
         
-        /* --- NOVOS ESTILOS SOLICITADOS --- */
+        /* --- ESTILOS DOS BOXES --- */
 
         .article-box {
             background-color: var(--cor-fundo-card);
@@ -117,7 +117,7 @@
             border: 1px solid #e0e0e0;
         }
         
-        /* --- FIM DOS NOVOS ESTILOS --- */
+        /* --- FIM ESTILOS DOS BOXES --- */
 
         h4 {
             font-size: 1.15em;
@@ -170,8 +170,9 @@
 
         th, td {
             padding: 12px 15px;
-            text-align: center;
+            text-align: left; /* Alinhamento padrão à esquerda */
             border-bottom: 1px solid var(--cor-borda);
+            color: var(--cor-texto-suave);
         }
 
         th {
@@ -181,6 +182,11 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+        
+        /* Centralizar colunas específicas se necessário */
+        table th.center, table td.center {
+            text-align: center;
         }
 
         tbody tr {
@@ -195,15 +201,45 @@
             background-color: #fdfdfd;
         }
         
+        /* Estilo geral para caption (usado nas tabelas principais) */
         caption {
             font-weight: 600;
             color: var(--cor-secundaria);
             font-size: 1.1em;
             padding: 10px;
             caption-side: top;
+            text-align: left;
         }
+        
+        /* --- NOVOS ESTILOS PARA TABELAS EM BOXES --- */
 
-        /* HR removido da separação de artigos */
+        /* Estilo para os títulos (caption) das tabelas nos boxes */
+        .mini-box table caption,
+        .highlight-box table caption {
+            caption-side: top;
+            text-align: left;
+            font-weight: 600;
+            color: var(--cor-primaria);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+        
+        /* Remover sombra e margem de tabelas dentro de boxes */
+        .mini-box table,
+        .highlight-box table {
+            box-shadow: none;
+            margin-bottom: 0;
+        }
+        
+        .mini-box table td,
+        .highlight-box table td {
+             font-size: 0.95rem; /* Fonte ligeiramente menor dentro dos boxes */
+        }
+        
+        /* --- FIM DOS NOVOS ESTILOS --- */
+        
+
         hr {
             display: none; 
         }
@@ -302,7 +338,23 @@
         <p><strong>§2º:</strong> A participação é aberta a qualquer pessoa de ambos os sexos, com idade mínima de 10 anos.</p>
         
         <div class="mini-box">
-            <p><strong>§3º:</strong> O torneio é composto pelas seguintes categorias: Sub 13, Sub 15, Sub 19, Feminino, Adulto A, Adulto B, Veterano+40.</p>
+             <table>
+                <caption><strong>§3º:</strong> O torneio é composto pelas seguintes categorias:</caption>
+                 <tbody>
+                     <tr>
+                         <td>Sub 13</td>
+                         <td>Sub 15</td>
+                         <td>Sub 19</td>
+                         <td>Feminino</td>
+                     </tr>
+                     <tr>
+                         <td>Adulto A</td>
+                         <td>Adulto B</td>
+                         <td>Veterano+40</td>
+                         <td>&nbsp;</td>
+                     </tr>
+                 </tbody>
+             </table>
         </div>
         
         <p><strong>§4º:</strong> Cada categoria necessita de um mínimo de <strong>3 atletas inscritos</strong> para ser realizada.</p>
@@ -322,14 +374,42 @@
         <p><strong>§1º:</strong> O sorteio dos grupos seguirá o sistema <strong>"Snake System"</strong>, distribuindo os atletas com base na sua posição no ranking inicial informado no cadastro. O objetivo é equilibrar tecnicamente os grupos.</p>
         
         <div class="highlight-box">
-            <p><strong>§2º:</strong> A formação dos grupos depende do número de atletas inscritos (<code>N</code>) na categoria:</p>
-            <ul>
-                <li><strong>N = 3 atletas:</strong> Será formado <strong>1 Grupo Único</strong>. Todos jogam contra todos (Round Robin). Não há fase eliminatória.</li>
-                <li><strong>N = 4 a 7 atletas:</strong> Serão formados <strong>2 Grupos</strong>. Os atletas são distribuídos via Snake System. Os 2 (dois) melhores de cada grupo classificam-se para a Fase Eliminatória (Semifinal).</li>
-                <li><strong>N = 8 a 15 atletas:</strong> Serão formados <strong>4 Grupos</strong>. Os atletas são distribuídos via Snake System. Os 2 (dois) melhores de cada grupo classificam-se para a Fase Eliminatória (Quartas de Final).</li>
-                <li><strong>N = 16 a 24 atletas:</strong> Serão formados <strong>8 Grupos</strong>. Os atletas são distribuídos via Snake System. Os 2 (dois) melhores de cada grupo classificam-se para a Fase Eliminatória (Oitavas de Final).</li>
-                <li><strong>N > 24 atletas:</strong> O sistema não suporta mais de 24 atletas por categoria.</li>
-            </ul>
+             <table>
+                 <caption><strong>§2º:</strong> A formação dos grupos depende do número de atletas inscritos (<code>N</code>) na categoria:</caption>
+                 <thead>
+                     <tr>
+                         <th>Nº de Atletas (N)</th>
+                         <th>Formato</th>
+                         <th>Classificação</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td><strong>N = 3 atletas</strong></td>
+                         <td>1 Grupo Único (Round Robin)</td>
+                         <td>Não há fase eliminatória</td>
+                     </tr>
+                     <tr>
+                         <td><strong>N = 4 a 7 atletas</strong></td>
+                         <td>2 Grupos (Snake System)</td>
+                         <td>2 melhores p/ Semifinal</td>
+                     </tr>
+                     <tr>
+                         <td><strong>N = 8 a 15 atletas</strong></td>
+                         <td>4 Grupos (Snake System)</td>
+                         <td>2 melhores p/ Quartas de Final</td>
+                     </tr>
+                     <tr>
+                         <td><strong>N = 16 a 24 atletas</strong></td>
+                         <td>8 Grupos (Snake System)</td>
+                         <td>2 melhores p/ Oitavas de Final</td>
+                     </tr>
+                      <tr>
+                         <td><strong>N > 24 atletas</strong></td>
+                         <td colspan="2">O sistema não suporta mais de 24 atletas por categoria.</td>
+                     </tr>
+                 </tbody>
+             </table>
         </div>
 
         <h3>Seção II - Sistema de Jogo</h3>
@@ -338,12 +418,26 @@
         <p><strong>§3º:</strong> Os atletas deverão apresentar-se 15 minutos antes do horário previsto para o seu jogo. Haverá uma tolerância de 2 minutos após a chamada. A ausência resultará em derrota por <strong>W.O.</strong> (Walkover), com placar registado como 0x3 (0-11, 0-11, 0-11).</p>
         
         <div class="mini-box">
-            <p><strong>§4º:</strong> A ordem dos jogos dentro de cada grupo seguirá o padrão definido:</p>
-            <ul>
-                <li><strong>Grupos de 3 (P1, P2, P3 por ranking):</strong> 1º Jogo: P1 x P3; 2º Jogo: P2 x P3; 3º Jogo: P1 x P2.</li>
-                <li><strong>Grupos de 4 (P1, P2, P3, P4 por ranking):</strong> 1º Jogo: P1 x P4; 2º Jogo: P2 x P3; 3º Jogo: P1 x P3; 4º Jogo: P2 x P4; 5º Jogo: P1 x P2; 6º Jogo: P3 x P4.</li>
-            </ul>
-             <p class="note">Nota: A ordem exata pode variar em grupos com W.O. ou número diferente de 3 ou 4 atletas.</p>
+            <table>
+                 <caption><strong>§4º:</strong> A ordem dos jogos dentro de cada grupo seguirá o padrão definido:</caption>
+                 <thead>
+                     <tr>
+                         <th>Grupo (Ranking)</th>
+                         <th>Ordem dos Jogos</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td><strong>Grupos de 3</strong> (P1, P2, P3)</td>
+                         <td>1º: P1 x P3; 2º: P2 x P3; 3º: P1 x P2</td>
+                     </tr>
+                     <tr>
+                         <td><strong>Grupos de 4</strong> (P1, P2, P3, P4)</td>
+                         <td>1º: P1 x P4; 2º: P2 x P3; 3º: P1 x P3; 4º: P2 x P4; 5º: P1 x P2; 6º: P3 x P4</td>
+                     </tr>
+                 </tbody>
+            </table>
+            <p class="note">Nota: A ordem exata pode variar em grupos com W.O. ou número diferente de 3 ou 4 atletas.</p>
         </div>
 
         <h3>Seção III - Critérios de Desempate (Fase de Grupos)</h3>
@@ -361,21 +455,59 @@
         <h3>Seção IV - Fase Eliminatória</h3>
         
         <div class="mini-box">
-            <p><strong>§1º:</strong> A fase eliminatória (mata-mata) inicia-se conforme o número de atletas (<code>N</code>) na categoria:</p>
-            <ul>
-                <li><strong>N = 4 a 7 atletas:</strong> Inicia na <strong>Semifinal</strong> (4 classificados).</li>
-                <li><strong>N = 8 a 15 atletas:</strong> Inicia nas <strong>Quartas de Final</strong> (8 classificados).</li>
-                <li><strong>N = 16 a 24 atletas:</strong> Inicia nas <strong>Oitavas de Final</strong> (16 classificados).</li>
-            </ul>
+             <table>
+                 <caption><strong>§1º:</strong> A fase eliminatória (mata-mata) inicia-se conforme o número de atletas (<code>N</code>) na categoria:</caption>
+                 <thead>
+                     <tr>
+                         <th>Nº de Atletas (N)</th>
+                         <th>Início da Fase</th>
+                         <th>Nº de Classificados</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td><strong>N = 4 a 7 atletas</strong></td>
+                         <td>Semifinal</td>
+                         <td>4 classificados</td>
+                     </tr>
+                      <tr>
+                         <td><strong>N = 8 a 15 atletas</strong></td>
+                         <td>Quartas de Final</td>
+                         <td>8 classificados</td>
+                     </tr>
+                      <tr>
+                         <td><strong>N = 16 a 24 atletas</strong></td>
+                         <td>Oitavas de Final</td>
+                         <td>16 classificados</td>
+                     </tr>
+                 </tbody>
+             </table>
         </div>
         
         <div class="highlight-box">
-            <p><strong>§2º:</strong> Os confrontos (chaveamento) são definidos automaticamente pelo sistema com base na classificação dos grupos (1º e 2º colocados), seguindo as regras:</p>
-            <ul>
-                <li><strong>2 Grupos (Semifinais):</strong> Jogo 1: 1ºA vs 2ºB; Jogo 2: 1ºB vs 2ºA.</li>
-                <li><strong>4 Grupos (Quartas de Final):</strong> Jogo 1: 1ºA vs 2ºD; Jogo 2: 1ºC vs 2ºB; Jogo 3: 1ºB vs 2ºC; Jogo 4: 1ºD vs 2ºA.</li>
-                <li><strong>8 Grupos (Oitavas de Final):</strong> Jogo 1: 1ºA vs 2ºH; Jogo 2: 1ºG vs 2ºB; Jogo 3: 1ºD vs 2ºE; Jogo 4: 1ºF vs 2ºC; Jogo 5: 1ºB vs 2ºG; Jogo 6: 1ºH vs 2ºA; Jogo 7: 1ºC vs 2ºF; Jogo 8: 1ºE vs 2ºD.</li>
-            </ul>
+             <table>
+                 <caption><strong>§2º:</strong> Os confrontos (chaveamento) são definidos automaticamente pelo sistema:</caption>
+                 <thead>
+                     <tr>
+                         <th>Grupos</th>
+                         <th>Confrontos</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td><strong>2 Grupos</strong> (Semifinais)</td>
+                         <td>Jogo 1: 1ºA vs 2ºB; Jogo 2: 1ºB vs 2ºA</td>
+                     </tr>
+                      <tr>
+                         <td><strong>4 Grupos</strong> (Quartas)</td>
+                         <td>Jogo 1: 1ºA vs 2ºD; Jogo 2: 1ºC vs 2ºB; Jogo 3: 1ºB vs 2ºC; Jogo 4: 1ºD vs 2ºA</td>
+                     </tr>
+                      <tr>
+                         <td><strong>8 Grupos</strong> (Oitavas)</td>
+                         <td>J1: 1ºA vs 2ºH; J2: 1ºG vs 2ºB; J3: 1ºD vs 2ºE; J4: 1ºF vs 2ºC; <br>J5: 1ºB vs 2ºG; J6: 1ºH vs 2ºA; J7: 1ºC vs 2ºF; J8: 1ºE vs 2ºD</td>
+                     </tr>
+                 </tbody>
+             </table>
         </div>
         
         <p><strong>§3º:</strong> Não haverá disputa de 3º lugar. Os atletas eliminados nas semifinais serão ambos considerados 3º colocados para efeito de ranking.</p>
@@ -390,15 +522,15 @@
             <thead>
                 <tr>
                     <th>Resultado</th>
-                    <th>Vencedor</th>
-                    <th>Perdedor</th>
+                    <th class="center">Vencedor</th>
+                    <th class="center">Perdedor</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td><strong>3 x 0</strong></td><td>+5 pts</td><td>+0 pts</td></tr>
-                <tr><td><strong>3 x 1</strong></td><td>+4 pts</td><td>+1 pt</td></tr>
-                <tr><td><strong>3 x 2</strong></td><td>+3 pts</td><td>+2 pts</td></tr>
-                <tr><td><strong>W.O.</strong></td><td>+5 pts</td><td>+0 pts</td></tr>
+                <tr><td><strong>3 x 0</strong></td><td class="center">+5 pts</td><td class="center">+0 pts</td></tr>
+                <tr><td><strong>3 x 1</strong></td><td class="center">+4 pts</td><td class="center">+1 pt</td></tr>
+                <tr><td><strong>3 x 2</strong></td><td class="center">+3 pts</td><td class="center">+2 pts</td></tr>
+                <tr><td><strong>W.O.</strong></td><td class="center">+5 pts</td><td class="center">+0 pts</td></tr>
             </tbody>
         </table>
 
@@ -412,41 +544,41 @@
             <div class="tabela-pontos">
                 <table>
                     <caption>Até 12 atletas</caption>
-                    <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
+                    <thead><tr><th>Fase Alcançada</th><th class="center">Pontos Base</th></tr></thead>
                     <tbody>
-                        <tr><td>Campeão</td><td>265</td></tr>
-                        <tr><td>Vice-Campeão</td><td>260</td></tr>
-                        <tr><td>Semifinal</td><td>250</td></tr>
-                        <tr><td>Quartas</td><td>235</td></tr>
-                        <tr><td>Classificação / Fase de Grupos</td><td>215</td></tr>
+                        <tr><td>Campeão</td><td class="center">265</td></tr>
+                        <tr><td>Vice-Campeão</td><td class="center">260</td></tr>
+                        <tr><td>Semifinal</td><td class="center">250</td></tr>
+                        <tr><td>Quartas</td><td class="center">235</td></tr>
+                        <tr><td>Classificação / Fase de Grupos</td><td class="center">215</td></tr>
                     </tbody>
                 </table>
             </div>
             <div class="tabela-pontos">
                 <table>
                      <caption>Até 16 atletas</caption>
-                    <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
+                    <thead><tr><th>Fase Alcançada</th><th class="center">Pontos Base</th></tr></thead>
                     <tbody>
-                        <tr><td>Campeão</td><td>265</td></tr>
-                        <tr><td>Vice-Campeão</td><td>260</td></tr>
-                        <tr><td>Semifinal</td><td>250</td></tr>
-                        <tr><td>Quartas</td><td>235</td></tr>
-                        <tr><td>Oitavas</td><td>215</td></tr>
-                        <tr><td>Classificação / Fase de Grupos</td><td>190</td></tr>
+                        <tr><td>Campeão</td><td class="center">265</td></tr>
+                        <tr><td>Vice-Campeão</td><td class="center">260</td></tr>
+                        <tr><td>Semifinal</td><td class="center">250</td></tr>
+                        <tr><td>Quartas</td><td class="center">235</td></tr>
+                        <tr><td>Oitavas</td><td class="center">215</td></tr>
+                        <tr><td>Classificação / Fase de Grupos</td><td class="center">190</td></tr>
                     </tbody>
                 </table>
             </div>
              <div class="tabela-pontos">
                 <table>
                      <caption>Até 24 atletas</caption>
-                    <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
+                    <thead><tr><th>Fase Alcançada</th><th class="center">Pontos Base</th></tr></thead>
                     <tbody>
-                        <tr><td>Campeão</td><td>265</td></tr>
-                        <tr><td>Vice-Campeão</td><td>260</td></tr>
-                        <tr><td>Semifinal</td><td>250</td></tr>
-                        <tr><td>Quartas</td><td>235</td></tr>
-                        <tr><td>Oitavas</td><td>215</td></tr>
-                        <tr><td>Classificação / Fase de Grupos</td><td>190</td></tr>
+                        <tr><td>Campeão</td><td class="center">265</td></tr>
+                        <tr><td>Vice-Campeão</td><td class="center">260</td></tr>
+                        <tr><td>Semifinal</td><td class="center">250</td></tr>
+                        <tr><td>Quartas</td><td class="center">235</td></tr>
+                        <tr><td>Oitavas</td><td class="center">215</td></tr>
+                        <tr><td>Classificação / Fase de Grupos</td><td class="center">190</td></tr>
                     </tbody>
                 </table>
             </div>
