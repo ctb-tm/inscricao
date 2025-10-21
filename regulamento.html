@@ -158,13 +158,14 @@
             font-size: 0.95em;
         }
 
+        /* Estilo GERAL de tabelas */
         table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: collapse; /* Essencial para os estilos de borda */
             margin-bottom: 25px;
             font-size: 1rem;
-            border-radius: 8px;
-            overflow: hidden;
+            border-radius: 8px; /* Funciona com overflow */
+            overflow: hidden; /* Clipa as bordas para o radius */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
@@ -184,7 +185,7 @@
             letter-spacing: 0.5px;
         }
         
-        /* Centralizar colunas específicas se necessário */
+        /* Centralizar colunas específicas */
         table th.center, table td.center {
             text-align: center;
         }
@@ -194,7 +195,7 @@
         }
         
         tbody tr:last-child td {
-             border-bottom: none;
+             border-bottom: none; /* Remove borda dupla no final */
         }
 
         tbody tr:hover {
@@ -211,8 +212,17 @@
             text-align: left;
         }
         
-        /* --- NOVOS ESTILOS PARA TABELAS EM BOXES --- */
+        /* --- ESTILOS PARA TABELAS EM BOXES --- */
 
+        /* Zera o estilo de "card" para tabelas dentro de boxes */
+        .mini-box table,
+        .highlight-box table {
+            box-shadow: none;
+            margin-bottom: 0;
+            border-radius: 0;
+            overflow: visible;
+        }
+        
         /* Estilo para os títulos (caption) das tabelas nos boxes */
         .mini-box table caption,
         .highlight-box table caption {
@@ -225,16 +235,23 @@
             padding: 0;
         }
         
-        /* Remover sombra e margem de tabelas dentro de boxes */
-        .mini-box table,
-        .highlight-box table {
-            box-shadow: none;
-            margin-bottom: 0;
-        }
-        
         .mini-box table td,
         .highlight-box table td {
              font-size: 0.95rem; /* Fonte ligeiramente menor dentro dos boxes */
+        }
+        
+        /* --- NOVO ESTILO: TABELA COM CONTORNO VERTICAL --- */
+        
+        /* Adiciona a borda externa completa */
+        .tabela-contorno {
+            border: 1px solid var(--cor-borda);
+        }
+        
+        /* Adiciona as bordas verticais (esquerda e direita) */
+        .tabela-contorno th,
+        .tabela-contorno td {
+            border-left: 1px solid var(--cor-borda);
+            border-right: 1px solid var(--cor-borda);
         }
         
         /* --- FIM DOS NOVOS ESTILOS --- */
@@ -298,6 +315,9 @@
             .mini-box, .highlight-box {
                 border: 1px solid #eee;
                 padding: 10px;
+            }
+            .tabela-contorno, .tabela-contorno th, .tabela-contorno td {
+                 border: 1px solid #999 !important; /* Força bordas na impressão */
             }
             nav, .control-panel, .form-group, button, .alert-info, .footer {
                 display: none;
@@ -418,7 +438,7 @@
         <p><strong>§3º:</strong> Os atletas deverão apresentar-se 15 minutos antes do horário previsto para o seu jogo. Haverá uma tolerância de 2 minutos após a chamada. A ausência resultará em derrota por <strong>W.O.</strong> (Walkover), com placar registado como 0x3 (0-11, 0-11, 0-11).</p>
         
         <div class="mini-box">
-            <table>
+            <table class="tabela-contorno">
                  <caption><strong>§4º:</strong> A ordem dos jogos dentro de cada grupo seguirá o padrão definido:</caption>
                  <thead>
                      <tr>
@@ -485,7 +505,7 @@
         </div>
         
         <div class="highlight-box">
-             <table>
+             <table class="tabela-contorno">
                  <caption><strong>§2º:</strong> Os confrontos (chaveamento) são definidos automaticamente pelo sistema:</caption>
                  <thead>
                      <tr>
