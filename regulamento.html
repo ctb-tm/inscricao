@@ -5,128 +5,238 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regulamento Oficial - CTB Sistema de Gestão de Torneios</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            color: #333;
+        /* --- Estilo Clean Web 3.0 --- */
+        
+        :root {
+            --cor-primaria: #1e3c72;
+            --cor-secundaria: #2a5298;
+            --cor-acento: #667eea;
+            --cor-texto: #212529;
+            --cor-texto-suave: #495057;
+            --cor-fundo: #f8f9fa;
+            --cor-fundo-card: #ffffff;
+            --cor-borda: #e9ecef;
+            --sombra: 0 8px 32px rgba(0, 0, 0, 0.07);
+            --border-radius: 12px;
         }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            margin: 0;
+            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            background-color: var(--cor-fundo-card);
+            border-radius: var(--border-radius);
+            box-shadow: var(--sombra);
         }
+
         .center-text {
             text-align: center;
         }
+
         .logo {
-            max-width: 120px; /* Ajuste o tamanho conforme necessário */
+            max-width: 100px;
             height: auto;
             display: block;
-            margin: 0 auto 15px auto;
+            margin: 0 auto 20px auto;
         }
+        
+        .logo-fallback {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--cor-primaria);
+            margin-bottom: 15px;
+        }
+
         h1 {
-            font-size: 1.8em;
-            color: #1e3c72;
-            margin-bottom: 5px;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--cor-primaria);
+            margin-bottom: 8px;
         }
+
         h2 {
-            font-size: 1.5em;
-            color: #2a5298;
+            font-size: 1.75em;
+            font-weight: 600;
+            color: var(--cor-primaria);
+            margin-top: 35px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--cor-borda);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: var(--cor-secundaria);
             margin-top: 25px;
             margin-bottom: 15px;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 5px;
         }
-        h3 {
-            font-size: 1.3em;
-            color: #764ba2;
+
+        h4 {
+            font-size: 1.15em;
             margin-top: 20px;
             margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--cor-texto);
         }
-        h4 {
-            font-size: 1.1em;
-            margin-top: 15px;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
+
         p, li {
-            margin-bottom: 10px;
-            text-align: justify;
+            margin-bottom: 12px;
+            text-align: left;
+            color: var(--cor-texto-suave);
+            font-size: 1rem;
         }
+
         ul, ol {
-            margin-left: 20px;
+            padding-left: 20px; /* Correto para indentação de lista */
+            margin-left: 0;
             margin-bottom: 15px;
         }
+
+        li {
+            margin-bottom: 8px;
+        }
+        
+        strong {
+           color: var(--cor-primaria);
+           font-weight: 600;
+        }
+        
+        code {
+            background-color: var(--cor-borda);
+            color: #d63384; /* Cor de destaque para código */
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
-            font-size: 0.9em;
+            margin-bottom: 25px;
+            font-size: 1rem;
+            border-radius: 8px;
+            overflow: hidden; /* Para aplicar border-radius nas células */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
+
         th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
+            padding: 12px 15px;
             text-align: center;
+            border-bottom: 1px solid var(--cor-borda);
         }
+
         th {
-            background-color: #eef1f7;
-            font-weight: bold;
+            background-color: var(--cor-fundo);
+            font-weight: 600;
+            color: #343a40;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        tbody tr:nth-child(even) {
-            background-color: #f9f9f9;
+
+        tbody tr {
+            background-color: var(--cor-fundo-card);
         }
-        tbody tr:nth-child(odd) {
-            background-color: #fff;
+        
+        tbody tr:last-child td {
+             border-bottom: none;
         }
+
+        tbody tr:hover {
+            background-color: #fdfdfd;
+        }
+        
+        caption {
+            font-weight: 600;
+            color: var(--cor-secundaria);
+            font-size: 1.1em;
+            padding: 10px;
+            caption-side: top;
+        }
+
         hr {
             border: 0;
             height: 1px;
-            background-color: #ccc;
-            margin: 30px 0;
+            background-color: var(--cor-borda);
+            margin: 40px 0;
         }
+
         .footer {
             text-align: center;
             margin-top: 30px;
-            font-size: 0.9em;
-            color: #777;
+            font-size: 0.85em;
+            color: #adb5bd;
         }
+
         .note {
-            font-style: italic;
+            background-color: var(--cor-fundo);
+            border-left: 4px solid var(--cor-acento);
+            padding: 12px 18px;
+            border-radius: 4px;
             font-size: 0.9em;
-            color: #555;
+            color: var(--cor-texto-suave);
             margin-top: 15px;
+            font-style: normal;
         }
-        /* Estilos específicos para impressão / PDF */
+        
+        /* Layout flexível para tabelas de pontos */
+        .pontos-container {
+             display: flex; 
+             justify-content: space-around; 
+             flex-wrap: wrap;
+        }
+        
+        .tabela-pontos {
+            width: 48%; 
+            min-width: 250px; 
+            margin-bottom: 15px;
+        }
+
+        /* Estilos específicos para impressão */
         @media print {
             body {
                 margin: 0;
-                font-size: 10pt; /* Ajuste para caber mais na página */
+                padding: 0;
+                font-size: 10pt;
+                background-color: #fff;
             }
             .container {
                 box-shadow: none;
                 border: none;
                 max-width: 100%;
                 padding: 0;
+                margin: 0;
             }
-            nav, .control-panel, .form-group, button, .alert-info {
-                display: none; /* Esconde elementos não relevantes para o regulamento */
+            nav, .control-panel, .form-group, button, .alert-info, .footer {
+                display: none; /* Esconde elementos não relevantes */
             }
             .page {
-                display: block !important; /* Mostra todo o conteúdo no PDF */
+                display: block !important;
                 animation: none !important;
             }
-            h2 {
-                page-break-before: auto; /* Tenta evitar quebrar páginas antes de títulos */
+            h2, h3 {
+                page-break-before: auto;
+                page-break-after: avoid;
             }
-            h3 {
-                 page-break-after: avoid; /* Tenta manter o título junto com o conteúdo seguinte */
+            table, .tabela-pontos {
+                page-break-inside: avoid;
+                width: 100%; /* Garante que tabelas usem a largura total */
             }
-            table {
-                 page-break-inside: avoid; /* Tenta manter tabelas na mesma página */
+            .pontos-container {
+                display: block; /* Desfaz o flex na impressão */
             }
         }
 
@@ -137,7 +247,7 @@
 <div class="container">
 
     <div class="center-text">
-      <img src="ctb.jpg" alt="CTB Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<p><strong>CTB</strong></p>')">
+      <img src="ctb.jpg" alt="CTB Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<div class=\'logo-fallback\'><strong>CTB</strong></div>')">
       <h1>CTB - CLUBE DOS TENISTAS DA BAHIA</h1>
       <h2>Regulamento Oficial - Sistema de Gestão de Torneios</h2>
       <h3>Circuito do Clube dos Tenistas da Bahia (Versão do Sistema)</h3>
@@ -236,9 +346,11 @@
     <h3>Subseção B - Pontuação de Ranking Final (Acumulada)</h3>
     <p>A pontuação final de cada atleta no torneio, utilizada para o ranking geral, será calculada pela <strong>soma</strong> dos <strong>Pontos Base</strong> (definidos pela fase alcançada) com o <strong>total de Pontos de Bónus</strong> (Subseção A) acumulados em todas as partidas disputadas pelo atleta.</p>
     <p><strong>Fórmula:</strong> <code>Pontuação Final = Pontos Base (Fase) + Σ (Pontos Bónus de cada partida)</code></p>
+    
     <h4>Tabelas de Pontos Base (conforme nº de atletas na categoria):</h4>
-    <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <div style="width: 45%; min-width: 250px; margin-bottom: 15px;">
+    
+    <div class="pontos-container">
+        <div class="tabela-pontos">
             <table>
                 <caption>Até 12 atletas</caption>
                 <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
@@ -251,7 +363,7 @@
                 </tbody>
             </table>
         </div>
-        <div style="width: 45%; min-width: 250px; margin-bottom: 15px;">
+        <div class="tabela-pontos">
             <table>
                  <caption>Até 16 atletas</caption>
                 <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
@@ -265,7 +377,7 @@
                 </tbody>
             </table>
         </div>
-         <div style="width: 45%; min-width: 250px; margin-bottom: 15px;">
+         <div class="tabela-pontos">
             <table>
                  <caption>Até 24 atletas</caption>
                 <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
