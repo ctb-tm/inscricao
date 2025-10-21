@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regulamento Oficial - CTB Sistema de Gestão de Torneios</title>
     <style>
-        /* --- Estilo Clean Web 3.0 --- */
+        /* --- Estilo Clean Web 3.0 (Modificado) --- */
         
         :root {
             --cor-primaria: #1e3c72;
@@ -34,7 +34,7 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 30px;
+            padding: 20px 30px 30px 30px; /* Ajuste no padding */
             background-color: var(--cor-fundo-card);
             border-radius: var(--border-radius);
             box-shadow: var(--sombra);
@@ -64,24 +64,60 @@
             color: var(--cor-primaria);
             margin-bottom: 8px;
         }
-
+        
+        /* H2 do Cabeçalho */
         h2 {
             font-size: 1.75em;
             font-weight: 600;
             color: var(--cor-primaria);
-            margin-top: 35px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--cor-borda);
-            padding-bottom: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
         }
-
+        
         h3 {
             font-size: 1.4em;
             font-weight: 600;
             color: var(--cor-secundaria);
-            margin-top: 25px;
+            margin-top: 0; /* Ajustado */
             margin-bottom: 15px;
         }
+        
+        /* --- NOVOS ESTILOS SOLICITADOS --- */
+
+        .article-box {
+            background-color: var(--cor-fundo-card);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-top: 25px;
+            border-left: 5px solid var(--cor-primaria); /* Borda azul grossa à esquerda */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* H2 dentro dos Artigos */
+        .article-box h2 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--cor-borda);
+        }
+
+        .mini-box {
+            background-color: var(--cor-fundo);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border: 1px solid var(--cor-borda);
+        }
+
+        .highlight-box {
+            background-color: #fdfdfd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+        }
+        
+        /* --- FIM DOS NOVOS ESTILOS --- */
 
         h4 {
             font-size: 1.15em;
@@ -99,7 +135,7 @@
         }
 
         ul, ol {
-            padding-left: 20px; /* Correto para indentação de lista */
+            padding-left: 20px;
             margin-left: 0;
             margin-bottom: 15px;
         }
@@ -115,7 +151,7 @@
         
         code {
             background-color: var(--cor-borda);
-            color: #d63384; /* Cor de destaque para código */
+            color: #d63384;
             padding: 2px 6px;
             border-radius: 4px;
             font-family: "Courier New", Courier, monospace;
@@ -128,7 +164,7 @@
             margin-bottom: 25px;
             font-size: 1rem;
             border-radius: 8px;
-            overflow: hidden; /* Para aplicar border-radius nas células */
+            overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
@@ -167,11 +203,9 @@
             caption-side: top;
         }
 
+        /* HR removido da separação de artigos */
         hr {
-            border: 0;
-            height: 1px;
-            background-color: var(--cor-borda);
-            margin: 40px 0;
+            display: none; 
         }
 
         .footer {
@@ -192,7 +226,6 @@
             font-style: normal;
         }
         
-        /* Layout flexível para tabelas de pontos */
         .pontos-container {
              display: flex; 
              justify-content: space-around; 
@@ -205,7 +238,6 @@
             margin-bottom: 15px;
         }
 
-        /* Estilos específicos para impressão */
         @media print {
             body {
                 margin: 0;
@@ -220,8 +252,19 @@
                 padding: 0;
                 margin: 0;
             }
+            .article-box {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                border-left: 5px solid #1e3c72;
+                margin-top: 15px;
+                padding: 15px;
+            }
+            .mini-box, .highlight-box {
+                border: 1px solid #eee;
+                padding: 10px;
+            }
             nav, .control-panel, .form-group, button, .alert-info, .footer {
-                display: none; /* Esconde elementos não relevantes */
+                display: none;
             }
             .page {
                 display: block !important;
@@ -233,10 +276,10 @@
             }
             table, .tabela-pontos {
                 page-break-inside: avoid;
-                width: 100%; /* Garante que tabelas usem a largura total */
+                width: 100%;
             }
             .pontos-container {
-                display: block; /* Desfaz o flex na impressão */
+                display: block;
             }
         }
 
@@ -247,163 +290,178 @@
 <div class="container">
 
     <div class="center-text">
-      <img src="ctb.jpg" alt="CTB Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<div class=\'logo-fallback\'><strong>CTB</strong></div>')">
+      <img src="ctb.png" alt="CTB Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<div class=\'logo-fallback\'><strong>CTB</strong></div>')">
       <h1>CTB - CLUBE DOS TENISTAS DA BAHIA</h1>
       <h2>Regulamento Oficial - Sistema de Gestão de Torneios</h2>
       <h3>Circuito do Clube dos Tenistas da Bahia (Versão do Sistema)</h3>
     </div>
 
-    <hr>
-
-    <h2>Artigo 1º - Local, Data e Participação</h2>
-    <p><strong>§1º:</strong> Os jogos serão realizados no Salão Polivalente do Colégio Estadual Thales de Azevedo, sempre aos sábados, às 9:00, conforme calendário oficial.</p>
-    <p><strong>§2º:</strong> A participação é aberta a qualquer pessoa de ambos os sexos, com idade mínima de 10 anos.</p>
-    <p><strong>§3º:</strong> O torneio é composto pelas seguintes categorias: Sub 13, Sub 15, Sub 19, Feminino, Adulto A, Adulto B, Veterano+40.</p>
-    <p><strong>§4º:</strong> Cada categoria necessita de um mínimo de <strong>3 atletas inscritos</strong> para ser realizada.</p>
-
-    <hr>
-
-    <h2>Artigo 2º - Inscrição e Divulgação</h2>
-    <p><strong>§1º:</strong> As inscrições deverão ser realizadas via PIX na página do evento no site ctb-ba.com.br até às 18h do dia anterior ao evento.</p>
-    <p><strong>§2º:</strong> Cada atleta poderá se inscrever em no máximo 1 (uma) categoria por etapa.</p>
-    <p><strong>§3º:</strong> As tabelas de jogos (formato dos grupos e confrontos) serão geradas pelo sistema após o início do torneio e podem ser consultadas online ou exportadas em PDF.</p>
-
-    <hr>
-
-    <h2>Artigo 3º - Formato da Competição</h2>
-
-    <h3>Seção I - Formação dos Grupos</h3>
-    <p><strong>§1º:</strong> O sorteio dos grupos seguirá o sistema <strong>"Snake System"</strong>, distribuindo os atletas com base na sua posição no ranking inicial informado no cadastro. O objetivo é equilibrar tecnicamente os grupos.</p>
-    <p><strong>§2º:</strong> A formação dos grupos depende do número de atletas inscritos (<code>N</code>) na categoria:</p>
-    <ul>
-        <li><strong>N = 3 atletas:</strong> Será formado <strong>1 Grupo Único</strong>. Todos jogam contra todos (Round Robin). Não há fase eliminatória.</li>
-        <li><strong>N = 4 a 7 atletas:</strong> Serão formados <strong>2 Grupos</strong>. Os atletas são distribuídos via Snake System. Os 2 (dois) melhores de cada grupo classificam-se para a Fase Eliminatória (Semifinal).</li>
-        <li><strong>N = 8 a 15 atletas:</strong> Serão formados <strong>4 Grupos</strong>. Os atletas são distribuídos via Snake System. Os 2 (dois) melhores de cada grupo classificam-se para a Fase Eliminatória (Quartas de Final).</li>
-        <li><strong>N = 16 a 24 atletas:</strong> Serão formados <strong>8 Grupos</strong>. Os atletas são distribuídos via Snake System. Os 2 (dois) melhores de cada grupo classificam-se para a Fase Eliminatória (Oitavas de Final).</li>
-        <li><strong>N > 24 atletas:</strong> O sistema não suporta mais de 24 atletas por categoria.</li>
-    </ul>
-
-    <h3>Seção II - Sistema de Jogo</h3>
-    <p><strong>§1º:</strong> Todas as partidas, tanto na fase de grupos quanto na fase eliminatória, serão disputadas em <strong>melhor de 5 sets</strong>, vencendo o atleta que primeiro ganhar 3 sets.</p>
-    <p><strong>§2º:</strong> Cada set é disputado até 11 pontos, sendo necessário abrir 2 pontos de diferença em caso de empate 10-10.</p>
-    <p><strong>§3º:</strong> Os atletas deverão apresentar-se 15 minutos antes do horário previsto para o seu jogo. Haverá uma tolerância de 2 minutos após a chamada. A ausência resultará em derrota por <strong>W.O.</strong> (Walkover), com placar registado como 0x3 (0-11, 0-11, 0-11).</p>
-    <p><strong>§4º:</strong> A ordem dos jogos dentro de cada grupo seguirá o padrão definido:</p>
-    <ul>
-        <li><strong>Grupos de 3 (P1, P2, P3 por ranking):</strong> 1º Jogo: P1 x P3; 2º Jogo: P2 x P3; 3º Jogo: P1 x P2.</li>
-        <li><strong>Grupos de 4 (P1, P2, P3, P4 por ranking):</strong> 1º Jogo: P1 x P4; 2º Jogo: P2 x P3; 3º Jogo: P1 x P3; 4º Jogo: P2 x P4; 5º Jogo: P1 x P2; 6º Jogo: P3 x P4.</li>
-    </ul>
-     <p class="note">Nota: A ordem exata pode variar em grupos com W.O. ou número diferente de 3 ou 4 atletas.</p>
-
-    <h3>Seção III - Critérios de Desempate (Fase de Grupos)</h3>
-    <p>A classificação dentro de cada grupo será determinada pela <strong>Pontuação de Bónus</strong> (ver Artigo 4º, Subseção A).</p>
-    <p>Em caso de empate na Pontuação de Bónus, aplicam-se os seguintes critérios, <strong>na ordem</strong>:</p>
-    <ol>
-        <li><strong>Confronto Direto:</strong> Aplicável apenas quando <strong>dois</strong> atletas estiverem empatados. O vencedor do jogo entre eles fica à frente.</li>
-        <li><strong>Índice de Desempate (ID):</strong> Aplicável quando <strong>três ou mais</strong> atletas estiverem empatados. Calcula-se o ID considerando *apenas os jogos entre os atletas empatados*: <br> <code>ID = (Número de Vitórias nos jogos entre os empatados) / (Número de Jogos disputados entre os empatados)</code> <br> O atleta com maior ID fica à frente.</li>
-        <li><strong>Saldo de Sets (Geral):</strong> Diferença entre Sets Pró (SP) e Sets Contra (SC) em *todos* os jogos do grupo. O maior saldo fica à frente.</li>
-        <li><strong>Saldo de Pontos (Geral):</strong> Diferença entre Pontos Pró (PP) e Pontos Contra (PC) em *todos* os jogos do grupo. O maior saldo fica à frente.</li>
-        <li><strong>Pontos Pró (Geral):</strong> Maior número de Pontos Pró (PP) em *todos* os jogos do grupo.</li>
-        <li><strong>Ranking Inicial:</strong> Menor número de ranking (melhor classificado) na inscrição.</li>
-    </ol>
-
-    <h3>Seção IV - Fase Eliminatória</h3>
-    <p><strong>§1º:</strong> A fase eliminatória (mata-mata) inicia-se conforme o número de atletas (<code>N</code>) na categoria:</p>
-    <ul>
-        <li><strong>N = 4 a 7 atletas:</strong> Inicia na <strong>Semifinal</strong> (4 classificados).</li>
-        <li><strong>N = 8 a 15 atletas:</strong> Inicia nas <strong>Quartas de Final</strong> (8 classificados).</li>
-        <li><strong>N = 16 a 24 atletas:</strong> Inicia nas <strong>Oitavas de Final</strong> (16 classificados).</li>
-    </ul>
-    <p><strong>§2º:</strong> Os confrontos (chaveamento) são definidos automaticamente pelo sistema com base na classificação dos grupos (1º e 2º colocados), seguindo as regras:</p>
-    <ul>
-        <li><strong>2 Grupos (Semifinais):</strong> Jogo 1: 1ºA vs 2ºB; Jogo 2: 1ºB vs 2ºA.</li>
-        <li><strong>4 Grupos (Quartas de Final):</strong> Jogo 1: 1ºA vs 2ºD; Jogo 2: 1ºC vs 2ºB; Jogo 3: 1ºB vs 2ºC; Jogo 4: 1ºD vs 2ºA.</li>
-        <li><strong>8 Grupos (Oitavas de Final):</strong> Jogo 1: 1ºA vs 2ºH; Jogo 2: 1ºG vs 2ºB; Jogo 3: 1ºD vs 2ºE; Jogo 4: 1ºF vs 2ºC; Jogo 5: 1ºB vs 2ºG; Jogo 6: 1ºH vs 2ºA; Jogo 7: 1ºC vs 2ºF; Jogo 8: 1ºE vs 2ºD.</li>
-    </ul>
-    <p><strong>§3º:</strong> Não haverá disputa de 3º lugar. Os atletas eliminados nas semifinais serão ambos considerados 3º colocados para efeito de ranking.</p>
-
-    <hr>
-
-    <h2>Artigo 4º - Sistema de Pontuação</h2>
-
-    <h3>Subseção A - Pontuação por Resultado das Partidas (Bónus)</h3>
-    <p>Esta pontuação é utilizada para a classificação nos grupos e para o cálculo acumulado do ranking final. Aplica-se a <strong>todas</strong> as partidas (fase de grupos e eliminatórias).</p>
-    <table>
-        <thead>
-            <tr>
-                <th>Resultado</th>
-                <th>Vencedor</th>
-                <th>Perdedor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td><strong>3 x 0</strong></td><td>+5 pts</td><td>+0 pts</td></tr>
-            <tr><td><strong>3 x 1</strong></td><td>+4 pts</td><td>+1 pt</td></tr>
-            <tr><td><strong>3 x 2</strong></td><td>+3 pts</td><td>+2 pts</td></tr>
-            <tr><td><strong>W.O.</strong></td><td>+5 pts</td><td>+0 pts</td></tr>
-        </tbody>
-    </table>
-
-    <h3>Subseção B - Pontuação de Ranking Final (Acumulada)</h3>
-    <p>A pontuação final de cada atleta no torneio, utilizada para o ranking geral, será calculada pela <strong>soma</strong> dos <strong>Pontos Base</strong> (definidos pela fase alcançada) com o <strong>total de Pontos de Bónus</strong> (Subseção A) acumulados em todas as partidas disputadas pelo atleta.</p>
-    <p><strong>Fórmula:</strong> <code>Pontuação Final = Pontos Base (Fase) + Σ (Pontos Bónus de cada partida)</code></p>
-    
-    <h4>Tabelas de Pontos Base (conforme nº de atletas na categoria):</h4>
-    
-    <div class="pontos-container">
-        <div class="tabela-pontos">
-            <table>
-                <caption>Até 12 atletas</caption>
-                <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
-                <tbody>
-                    <tr><td>Campeão</td><td>265</td></tr>
-                    <tr><td>Vice-Campeão</td><td>260</td></tr>
-                    <tr><td>Semifinal</td><td>250</td></tr>
-                    <tr><td>Quartas</td><td>235</td></tr>
-                    <tr><td>Classificação / Fase de Grupos</td><td>215</td></tr>
-                </tbody>
-            </table>
+    <div class="article-box">
+        <h2>Artigo 1º - Local, Data e Participação</h2>
+        <p><strong>§1º:</strong> Os jogos serão realizados no Salão Polivalente do Colégio Estadual Thales de Azevedo, sempre aos sábados, às 9:00, conforme calendário oficial.</p>
+        <p><strong>§2º:</strong> A participação é aberta a qualquer pessoa de ambos os sexos, com idade mínima de 10 anos.</p>
+        
+        <div class="mini-box">
+            <p><strong>§3º:</strong> O torneio é composto pelas seguintes categorias: Sub 13, Sub 15, Sub 19, Feminino, Adulto A, Adulto B, Veterano+40.</p>
         </div>
-        <div class="tabela-pontos">
-            <table>
-                 <caption>Até 16 atletas</caption>
-                <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
-                <tbody>
-                    <tr><td>Campeão</td><td>265</td></tr>
-                    <tr><td>Vice-Campeão</td><td>260</td></tr>
-                    <tr><td>Semifinal</td><td>250</td></tr>
-                    <tr><td>Quartas</td><td>235</td></tr>
-                    <tr><td>Oitavas</td><td>215</td></tr>
-                    <tr><td>Classificação / Fase de Grupos</td><td>190</td></tr>
-                </tbody>
-            </table>
+        
+        <p><strong>§4º:</strong> Cada categoria necessita de um mínimo de <strong>3 atletas inscritos</strong> para ser realizada.</p>
+    </div>
+
+    <div class="article-box">
+        <h2>Artigo 2º - Inscrição e Divulgação</h2>
+        <p><strong>§1º:</strong> As inscrições deverão ser realizadas via PIX na página do evento no site ctb-ba.com.br até às 18h do dia anterior ao evento.</p>
+        <p><strong>§2º:</strong> Cada atleta poderá se inscrever em no máximo 1 (uma) categoria por etapa.</p>
+        <p><strong>§3º:</strong> As tabelas de jogos (formato dos grupos e confrontos) serão geradas pelo sistema após o início do torneio e podem ser consultadas online ou exportadas em PDF.</p>
+    </div>
+
+    <div class="article-box">
+        <h2>Artigo 3º - Formato da Competição</h2>
+
+        <h3>Seção I - Formação dos Grupos</h3>
+        <p><strong>§1º:</strong> O sorteio dos grupos seguirá o sistema <strong>"Snake System"</strong>, distribuindo os atletas com base na sua posição no ranking inicial informado no cadastro. O objetivo é equilibrar tecnicamente os grupos.</p>
+        
+        <div class="highlight-box">
+            <p><strong>§2º:</strong> A formação dos grupos depende do número de atletas inscritos (<code>N</code>) na categoria:</p>
+            <ul>
+                <li><strong>N = 3 atletas:</strong> Será formado <strong>1 Grupo Único</strong>. Todos jogam contra todos (Round Robin). Não há fase eliminatória.</li>
+                <li><strong>N = 4 a 7 atletas:</strong> Serão formados <strong>2 Grupos</strong>. Os atletas são distribuídos via Snake System. Os 2 (dois) melhores de cada grupo classificam-se para a Fase Eliminatória (Semifinal).</li>
+                <li><strong>N = 8 a 15 atletas:</strong> Serão formados <strong>4 Grupos</strong>. Os atletas são distribuídos via Snake System. Os 2 (dois) melhores de cada grupo classificam-se para a Fase Eliminatória (Quartas de Final).</li>
+                <li><strong>N = 16 a 24 atletas:</strong> Serão formados <strong>8 Grupos</strong>. Os atletas são distribuídos via Snake System. Os 2 (dois) melhores de cada grupo classificam-se para a Fase Eliminatória (Oitavas de Final).</li>
+                <li><strong>N > 24 atletas:</strong> O sistema não suporta mais de 24 atletas por categoria.</li>
+            </ul>
         </div>
-         <div class="tabela-pontos">
-            <table>
-                 <caption>Até 24 atletas</caption>
-                <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
-                <tbody>
-                    <tr><td>Campeão</td><td>265</td></tr>
-                    <tr><td>Vice-Campeão</td><td>260</td></tr>
-                    <tr><td>Semifinal</td><td>250</td></tr>
-                    <tr><td>Quartas</td><td>235</td></tr>
-                    <tr><td>Oitavas</td><td>215</td></tr>
-                    <tr><td>Classificação / Fase de Grupos</td><td>190</td></tr>
-                </tbody>
-            </table>
+
+        <h3>Seção II - Sistema de Jogo</h3>
+        <p><strong>§1º:</strong> Todas as partidas, tanto na fase de grupos quanto na fase eliminatória, serão disputadas em <strong>melhor de 5 sets</strong>, vencendo o atleta que primeiro ganhar 3 sets.</p>
+        <p><strong>§2º:</strong> Cada set é disputado até 11 pontos, sendo necessário abrir 2 pontos de diferença em caso de empate 10-10.</p>
+        <p><strong>§3º:</strong> Os atletas deverão apresentar-se 15 minutos antes do horário previsto para o seu jogo. Haverá uma tolerância de 2 minutos após a chamada. A ausência resultará em derrota por <strong>W.O.</strong> (Walkover), com placar registado como 0x3 (0-11, 0-11, 0-11).</p>
+        
+        <div class="mini-box">
+            <p><strong>§4º:</strong> A ordem dos jogos dentro de cada grupo seguirá o padrão definido:</p>
+            <ul>
+                <li><strong>Grupos de 3 (P1, P2, P3 por ranking):</strong> 1º Jogo: P1 x P3; 2º Jogo: P2 x P3; 3º Jogo: P1 x P2.</li>
+                <li><strong>Grupos de 4 (P1, P2, P3, P4 por ranking):</strong> 1º Jogo: P1 x P4; 2º Jogo: P2 x P3; 3º Jogo: P1 x P3; 4º Jogo: P2 x P4; 5º Jogo: P1 x P2; 6º Jogo: P3 x P4.</li>
+            </ul>
+             <p class="note">Nota: A ordem exata pode variar em grupos com W.O. ou número diferente de 3 ou 4 atletas.</p>
+        </div>
+
+        <h3>Seção III - Critérios de Desempate (Fase de Grupos)</h3>
+        <p>A classificação dentro de cada grupo será determinada pela <strong>Pontuação de Bónus</strong> (ver Artigo 4º, Subseção A).</p>
+        <p>Em caso de empate na Pontuação de Bónus, aplicam-se os seguintes critérios, <strong>na ordem</strong>:</p>
+        <ol>
+            <li><strong>Confronto Direto:</strong> Aplicável apenas quando <strong>dois</strong> atletas estiverem empatados. O vencedor do jogo entre eles fica à frente.</li>
+            <li><strong>Índice de Desempate (ID):</strong> Aplicável quando <strong>três ou mais</strong> atletas estiverem empatados. Calcula-se o ID considerando *apenas os jogos entre os atletas empatados*: <br> <code>ID = (Número de Vitórias nos jogos entre os empatados) / (Número de Jogos disputados entre os empatados)</code> <br> O atleta com maior ID fica à frente.</li>
+            <li><strong>Saldo de Sets (Geral):</strong> Diferença entre Sets Pró (SP) e Sets Contra (SC) em *todos* os jogos do grupo. O maior saldo fica à frente.</li>
+            <li><strong>Saldo de Pontos (Geral):</strong> Diferença entre Pontos Pró (PP) e Pontos Contra (PC) em *todos* os jogos do grupo. O maior saldo fica à frente.</li>
+            <li><strong>Pontos Pró (Geral):</strong> Maior número de Pontos Pró (PP) em *todos* os jogos do grupo.</li>
+            <li><strong>Ranking Inicial:</strong> Menor número de ranking (melhor classificado) na inscrição.</li>
+        </ol>
+
+        <h3>Seção IV - Fase Eliminatória</h3>
+        
+        <div class="mini-box">
+            <p><strong>§1º:</strong> A fase eliminatória (mata-mata) inicia-se conforme o número de atletas (<code>N</code>) na categoria:</p>
+            <ul>
+                <li><strong>N = 4 a 7 atletas:</strong> Inicia na <strong>Semifinal</strong> (4 classificados).</li>
+                <li><strong>N = 8 a 15 atletas:</strong> Inicia nas <strong>Quartas de Final</strong> (8 classificados).</li>
+                <li><strong>N = 16 a 24 atletas:</strong> Inicia nas <strong>Oitavas de Final</strong> (16 classificados).</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <p><strong>§2º:</strong> Os confrontos (chaveamento) são definidos automaticamente pelo sistema com base na classificação dos grupos (1º e 2º colocados), seguindo as regras:</p>
+            <ul>
+                <li><strong>2 Grupos (Semifinais):</strong> Jogo 1: 1ºA vs 2ºB; Jogo 2: 1ºB vs 2ºA.</li>
+                <li><strong>4 Grupos (Quartas de Final):</strong> Jogo 1: 1ºA vs 2ºD; Jogo 2: 1ºC vs 2ºB; Jogo 3: 1ºB vs 2ºC; Jogo 4: 1ºD vs 2ºA.</li>
+                <li><strong>8 Grupos (Oitavas de Final):</strong> Jogo 1: 1ºA vs 2ºH; Jogo 2: 1ºG vs 2ºB; Jogo 3: 1ºD vs 2ºE; Jogo 4: 1ºF vs 2ºC; Jogo 5: 1ºB vs 2ºG; Jogo 6: 1ºH vs 2ºA; Jogo 7: 1ºC vs 2ºF; Jogo 8: 1ºE vs 2ºD.</li>
+            </ul>
+        </div>
+        
+        <p><strong>§3º:</strong> Não haverá disputa de 3º lugar. Os atletas eliminados nas semifinais serão ambos considerados 3º colocados para efeito de ranking.</p>
+    </div>
+
+    <div class="article-box">
+        <h2>Artigo 4º - Sistema de Pontuação</h2>
+
+        <h3>Subseção A - Pontuação por Resultado das Partidas (Bónus)</h3>
+        <p>Esta pontuação é utilizada para a classificação nos grupos e para o cálculo acumulado do ranking final. Aplica-se a <strong>todas</strong> as partidas (fase de grupos e eliminatórias).</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Resultado</th>
+                    <th>Vencedor</th>
+                    <th>Perdedor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>3 x 0</strong></td><td>+5 pts</td><td>+0 pts</td></tr>
+                <tr><td><strong>3 x 1</strong></td><td>+4 pts</td><td>+1 pt</td></tr>
+                <tr><td><strong>3 x 2</strong></td><td>+3 pts</td><td>+2 pts</td></tr>
+                <tr><td><strong>W.O.</strong></td><td>+5 pts</td><td>+0 pts</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Subseção B - Pontuação de Ranking Final (Acumulada)</h3>
+        <p>A pontuação final de cada atleta no torneio, utilizada para o ranking geral, será calculada pela <strong>soma</strong> dos <strong>Pontos Base</strong> (definidos pela fase alcançada) com o <strong>total de Pontos de Bónus</strong> (Subseção A) acumulados em todas as partidas disputadas pelo atleta.</p>
+        <p><strong>Fórmula:</strong> <code>Pontuação Final = Pontos Base (Fase) + Σ (Pontos Bónus de cada partida)</code></p>
+        
+        <h4>Tabelas de Pontos Base (conforme nº de atletas na categoria):</h4>
+        
+        <div class="pontos-container">
+            <div class="tabela-pontos">
+                <table>
+                    <caption>Até 12 atletas</caption>
+                    <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
+                    <tbody>
+                        <tr><td>Campeão</td><td>265</td></tr>
+                        <tr><td>Vice-Campeão</td><td>260</td></tr>
+                        <tr><td>Semifinal</td><td>250</td></tr>
+                        <tr><td>Quartas</td><td>235</td></tr>
+                        <tr><td>Classificação / Fase de Grupos</td><td>215</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tabela-pontos">
+                <table>
+                     <caption>Até 16 atletas</caption>
+                    <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
+                    <tbody>
+                        <tr><td>Campeão</td><td>265</td></tr>
+                        <tr><td>Vice-Campeão</td><td>260</td></tr>
+                        <tr><td>Semifinal</td><td>250</td></tr>
+                        <tr><td>Quartas</td><td>235</td></tr>
+                        <tr><td>Oitavas</td><td>215</td></tr>
+                        <tr><td>Classificação / Fase de Grupos</td><td>190</td></tr>
+                    </tbody>
+                </table>
+            </div>
+             <div class="tabela-pontos">
+                <table>
+                     <caption>Até 24 atletas</caption>
+                    <thead><tr><th>Fase Alcançada</th><th>Pontos Base</th></tr></thead>
+                    <tbody>
+                        <tr><td>Campeão</td><td>265</td></tr>
+                        <tr><td>Vice-Campeão</td><td>260</td></tr>
+                        <tr><td>Semifinal</td><td>250</td></tr>
+                        <tr><td>Quartas</td><td>235</td></tr>
+                        <tr><td>Oitavas</td><td>215</td></tr>
+                        <tr><td>Classificação / Fase de Grupos</td><td>190</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
-    <hr>
-
-    <h2>Artigo 5º - Disposições Gerais</h2>
-    <p><strong>Uniforme:</strong> Obrigatório o uso de camisa com manga (qualquer cor exceto branca ou laranja), short/saia e tênis apropriado.</p>
-    <p><strong>Equipamentos:</strong> Permitidas apenas raquetes aprovadas pela ITTF.</p>
-    <p><strong>Arbitragem:</strong> A arbitragem das partidas será realizada, preferencialmente, pelos atletas que perderam na rodada anterior na mesma mesa, ou conforme designado pela organização. Súmulas em branco serão fornecidas (geradas pelo sistema).</p>
-    <p><strong>Premiação:</strong> Serão entregues medalhas aos quatro primeiros colocados de cada categoria (Campeão, Vice e os dois Semifinalistas).</p>
-    <p><strong>Coordenação:</strong> A coordenação geral do torneio é de responsabilidade de Paulo Carneiro.</p>
-    <p><strong>Casos Omissos:</strong> Situações não previstas neste regulamento serão decididas pela coordenação do torneio.</p>
-
-    <hr>
+    <div class="article-box">
+        <h2>Artigo 5º - Disposições Gerais</h2>
+        <p><strong>Uniforme:</strong> Obrigatório o uso de camisa com manga (qualquer cor exceto branca ou laranja), short/saia e tênis apropriado.</p>
+        <p><strong>Equipamentos:</strong> Permitidas apenas raquetes aprovadas pela ITTF.</p>
+        <p><strong>Arbitragem:</strong> A arbitragem das partidas será realizada, preferencialmente, pelos atletas que perderam na rodada anterior na mesma mesa, ou conforme designado pela organização. Súmulas em branco serão fornecidas (geradas pelo sistema).</p>
+        <p><strong>Premiação:</strong> Serão entregues medalhas aos quatro primeiros colocados de cada categoria (Campeão, Vice e os dois Semifinalistas).</p>
+        <p><strong>Coordenação:</strong> A coordenação geral do torneio é de responsabilidade de Paulo Carneiro.</p>
+        <p><strong>Casos Omissos:</strong> Situações não previstas neste regulamento serão decididas pela coordenação do torneio.</p>
+    </div>
 
     <p class="footer"><em>Clube dos Tenistas da Bahia - Regulamento (Versão do Sistema) - 2025</em></p>
 
