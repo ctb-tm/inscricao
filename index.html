@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-EM">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CTB | Inscrição</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +15,9 @@
             --ctb-blue-10: rgba(25,48,90,.10);
             --ctb-blue-03: rgba(25,48,90,.03);
             --radius-lg: 24px;
-            /* NOVAS VARIAVEIS: Cores para o botão vermelho */
-            --ctb-red: #DC3545; /* Vermelho padrão para destaque */
-            --ctb-red-dark: #C82333; /* Vermelho mais escuro para hover */
+            /* Cores para o botão vermelho */
+            --ctb-red: #DC3545;
+            --ctb-red-dark: #C82333;
         }
         *{box-sizing:border-box}
         body{margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,'Noto Sans';background:linear-gradient(135deg,#f8fbff,#eef6ff)}
@@ -43,21 +43,21 @@
         .btn{appearance:none;border:0;outline:0;cursor:pointer;border-radius:14px;padding:11px 22px;font-weight:700;letter-spacing:.3px;transition:.25s;box-shadow:0 5px 18px rgba(25,48,90,.17);background:var(--ctb-blue-dark);color:#fff;white-space:nowrap}
         .btn:hover{transform:translateY(-2px);background:var(--ctb-green-dark);box-shadow:0 10px 23px rgba(25,48,90,.22);}
         
-        /* NOVO ESTILO: Classe para o botão vermelho */
+        /* Classe para o botão vermelho */
         .btn-red {
             background: var(--ctb-red);
             color: #fff;
             box-shadow:0 5px 18px rgba(220,53,69,.25); 
-            margin-right: 10px; /* Adiciona espaçamento entre o botão Inscritos e Regulamento */
         }
         .btn-red:hover {
             background: var(--ctb-red-dark);
             box-shadow:0 10px 23px rgba(220,53,69,.35);
         }
 
-        /* NOVO ESTILO: Contêiner para agrupar os botões e manter o margin-left:auto */
+        /* Contêiner para agrupar os botões e manter o margin-left:auto */
         .header-buttons-container {
             display: flex;
+            gap: 10px; /* Espaçamento entre os botões */
             margin-left: auto; /* Mantém o alinhamento à direita */
             align-items: center; /* Alinha verticalmente os botões */
         }
@@ -148,7 +148,6 @@
             .header-buttons-container .btn,
             .header-buttons-container .btn-red {
                 width: 100%; /* Botões ocupam a largura total no mobile */
-                margin-right: 0; /* Remove espaçamento lateral extra */
                 margin-bottom: 10px; /* Adiciona espaçamento vertical entre os botões */
             }
             .header-buttons-container .btn:last-child,
@@ -166,7 +165,7 @@
                 <span class="header-title">INSCRIÇÃO</span>
                 <div class="header-buttons-container">
                     <a class="btn btn-red" href="inscritos.html">Inscritos</a>
-                    <a class="btn" href="regulamento.html">Regulamento</a>
+                    <a class="btn" href="categorias.html">Categorias</a> <a class="btn" href="regulamento.html">Regulamento</a>
                 </div>
             </div>
             <div class="titulo-evento">
