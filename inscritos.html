@@ -9,7 +9,7 @@
     :root{
       --bg-dark:#0b2340;
       --box-light: rgba(255,255,255,0.03);
-      --table-header: #003366; /* Azul 80% */
+      --table-header: #003366; /* 80% azul */
       --white: #ffffff;
       --muted: rgba(255,255,255,0.75);
       --max-width: 1100px;
@@ -17,14 +17,14 @@
     }
     html,body{height:100%;margin:0;background:var(--bg-dark);color:var(--white);}
     .container{max-width:var(--max-width);margin:36px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));border-radius:14px;box-shadow:0 8px 30px rgba(2,6,23,0.6);}
-    .header{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--table-header);padding:12px;border-radius:10px 10px 0 0;}
+    .header{display:flex;align-items:center;justify-content:space-between;gap:12px}
     .brand-left, .brand-right{width:64px;height:64px;flex:0 0 64px}
     .brand-left img, .brand-right img{width:100%;height:100%;object-fit:contain}
     .title{flex:1;text-align:center}
-    .title h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.6px;color:var(--white)}
+    .title h1{margin:0;font-size:22px;font-weight:700;letter-spacing:0.6px}
     .subtitle{margin-top:6px;font-size:13px;color:var(--muted);font-weight:400}
 
-    .content{margin-top:0;background:var(--box-light);padding:16px;border-radius:0 0 10px 10px}
+    .content{margin-top:20px;background:var(--box-light);padding:16px;border-radius:10px}
     .table-wrap{overflow:auto;border-radius:8px}
     table{width:100%;border-collapse:collapse;min-width:820px}
     thead th{background:var(--table-header);color:var(--white);padding:10px 12px;text-align:left;font-weight:600;font-size:13px}
@@ -39,7 +39,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <div class="brand-left"><img src="ctb.png" alt="CTB"></div>
+      <div class="brand-left"><img src="ctb.jpeg" alt="CTB"></div>
       <div class="title">
         <h1>Torneio CTB — Lista de Atletas Inscritos</h1>
         <div class="subtitle">Nº • Nome • Clube • Categorias</div>
@@ -49,7 +49,72 @@
 
     <div class="content">
       <div class="table-wrap">
-        <!-- tabela mantida igual -->
+        <table role="table" aria-label="Lista de inscritos">
+          <thead>
+            <tr>
+              <th class="col-num">Nº</th>
+              <th class="col-nome">Nome</th>
+              <th class="col-clube">Clube</th>
+              <th class="col-cat">Categorias</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Adalberto Machado</td><td>CT Carneiro</td><td>Aberto A</td></tr>
+            <tr><td>2</td><td>Airan Rian</td><td>AMI</td><td>Sub15, Aberto B</td></tr>
+            <tr><td>3</td><td>Anderson Pimentel</td><td>AABB SALVADOR</td><td>Aberto A, Aberto B</td></tr>
+            <tr><td>4</td><td>Ângelo Neto</td><td>AABB SALVADOR</td><td>Aberto A</td></tr>
+            <tr><td>5</td><td>Antonio Eder</td><td>CT Carneiro</td><td>Aberto A</td></tr>
+            <tr><td>6</td><td>Antonio Ismael</td><td>CTB</td><td>Aberto B</td></tr>
+            <tr><td>7</td><td>Arthur Eduardo</td><td>CTB</td><td>Sub13, Sub15</td></tr>
+            <tr><td>8</td><td>Bento Aragão</td><td>CTB</td><td>Sub13, Sub15</td></tr>
+            <tr><td>9</td><td>Bernardo Ferrao</td><td>CTB</td><td>Sub13, Sub15</td></tr>
+            <tr><td>10</td><td>Carlos Eduardo</td><td>CTB</td><td>Sub19, Aberto A</td></tr>
+            <tr><td>11</td><td>Davi Lobo</td><td>CTB</td><td>Sub13, Aberto B</td></tr>
+            <tr><td>12</td><td>Edgar Couto</td><td>CT Carneiro</td><td>Aberto A, Veterano</td></tr>
+            <tr><td>13</td><td>Edjailson Arruda</td><td>CT Carneiro</td><td>Aberto A, Veterano</td></tr>
+            <tr><td>14</td><td>Ednaldo Fernandes</td><td>AMI</td><td>Aberto A, Veterano</td></tr>
+            <tr><td>15</td><td>Eliel Barbosa</td><td>CTB</td><td>Aberto A, Aberto B</td></tr>
+            <tr><td>16</td><td>Enio Queiroz</td><td>ABTM</td><td>Aberto B, Veterano</td></tr>
+            <tr><td>17</td><td>Enzo Bonfim</td><td>ATMC-Camaçari</td><td>Sub13, 15</td></tr>
+            <tr><td>18</td><td>Enzo Nascimento</td><td>CTB</td><td>Sub15, Sub19</td></tr>
+            <tr><td>19</td><td>Ernani Souza</td><td>ABTM</td><td>Aberto A, Veterano</td></tr>
+            <tr><td>20</td><td>Fernando Simões</td><td>ABTM</td><td>Aberto A, Veterano</td></tr>
+            <tr><td>21</td><td>Gabriel Caldas</td><td>CTB</td><td>Sub13</td></tr>
+            <tr><td>22</td><td>Gilton Lima</td><td>CT Carneiro</td><td>Aberto B, Veterano</td></tr>
+            <tr><td>23</td><td>Guilherme Chenaud</td><td>ABTM</td><td>Aberto A</td></tr>
+            <tr><td>24</td><td>Guilherme de Barros</td><td>CTB</td><td>Sub13</td></tr>
+            <tr><td>25</td><td>Inigmar Veras</td><td>AABB SALVADOR</td><td>Aberto B, Veterano</td></tr>
+            <tr><td>26</td><td>Iuki Alves</td><td>Sertanejo</td><td>Aberto A</td></tr>
+            <tr><td>27</td><td>Jadson Almeida</td><td>ABTM</td><td>Aberto A, Veterano</td></tr>
+            <tr><td>28</td><td>João Gabriel</td><td>AMI</td><td>Sub15, Aberto B</td></tr>
+            <tr><td>29</td><td>José Kramer</td><td>CTB</td><td>Aberto A, Aberto B</td></tr>
+            <tr><td>30</td><td>Kayan Franca</td><td>CTB</td><td>Sub19, Aberto B</td></tr>
+            <tr><td>31</td><td>Kennedy Abraão</td><td>AMI</td><td>Sub13, Aberto B</td></tr>
+            <tr><td>32</td><td>Leonardo Costard</td><td>CTB</td><td>Sub19, Aberto B</td></tr>
+            <tr><td>33</td><td>Lucas do Nascimento</td><td>ACTC</td><td>Aberto B, Veterano</td></tr>
+            <tr><td>34</td><td>Lucas Julião</td><td>CTB</td><td>Sub15, Sub19</td></tr>
+            <tr><td>35</td><td>Lucas Valencio</td><td>AABB SALVADOR</td><td>Aberto A</td></tr>
+            <tr><td>36</td><td>Luiz Carlos</td><td>ABTM</td><td>Aberto A, Veterano</td></tr>
+            <tr><td>37</td><td>Marcos Augusto</td><td>CTB</td><td>Sub19</td></tr>
+            <tr><td>38</td><td>Matheus Figueiredo</td><td>AMI</td><td>Sub15, Aberto B</td></tr>
+            <tr><td>39</td><td>Nicolas Aragão</td><td>CTB</td><td>Sub15, Aberto B</td></tr>
+            <tr><td>40</td><td>Nicolas Diniz</td><td>Módulo</td><td>Sub13</td></tr>
+            <tr><td>41</td><td>Patrick Pimenta</td><td>CTB</td><td>Aberto A, Aberto B</td></tr>
+            <tr><td>42</td><td>Paulo Carneiro</td><td>CTB</td><td>Aberto A</td></tr>
+            <tr><td>43</td><td>Pedro Carneiro</td><td>Colégio Montessoriano</td><td>Sub19, Aberto B</td></tr>
+            <tr><td>44</td><td>Rafael Guimaraes</td><td>CTB</td><td>Aberto B</td></tr>
+            <tr><td>45</td><td>Renato Simões</td><td>ABTM</td><td>Aberto A, Veterano</td></tr>
+            <tr><td>46</td><td>Renzo Vitório</td><td>CTB</td><td>Sub13, Sub15</td></tr>
+            <tr><td>47</td><td>Romilton Carvalho</td><td>ABTM</td><td>Aberto B, Veterano</td></tr>
+            <tr><td>48</td><td>Samuel Olaves</td><td>CTB</td><td>Sub13, Sub15</td></tr>
+            <tr><td>49</td><td>Samuel Nascimento</td><td>CTB</td><td>Veterano</td></tr>
+            <tr><td>50</td><td>Saulo Feitosa</td><td>CT Cabula</td><td>Aberto B, Veterano</td></tr>
+            <tr><td>51</td><td>Thiago de Lima</td><td>CTB</td><td>Sub19, Aberto B</td></tr>
+            <tr><td>52</td><td>Thiago Silva</td><td>AABB SALVADOR</td><td>Sub15, Aberto A</td></tr>
+            <tr><td>53</td><td>William Belo</td><td>CTB</td><td>Aberto A, Aberto B</td></tr>
+            <tr><td>54</td><td>Yan Bertolino</td><td>CTB</td><td>Sub15</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
