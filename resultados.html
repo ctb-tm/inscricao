@@ -43,26 +43,23 @@
             color: white; 
             text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); 
 
-            /* ALTERAÇÃO: Fundo Verde e Azul */
-            background: linear-gradient(135deg, #007c2a 0%, #002a7c 80%);
+            /* ALTERAÇÃO: Fundo Verde 90% e Azul 60% */
+            background: linear-gradient(135deg, rgba(0, 124, 42, 0.9) 0%, rgba(0, 42, 124, 0.6) 100%);
         }
 
         /* 4. Cabeçalho e Layout Flex */
         .header {
             padding: 2%;
-            
-            /* NOVO: Layout Flex para alinhar título, logo e botões */
             display: flex;
-            justify-content: space-between; /* Espaça os 3 blocos */
-            align-items: center; /* Centraliza verticalmente */
+            justify-content: space-between;
+            align-items: center;
             
-            /* ALTERAÇÃO: Fundo verde 10% */
-            background-color: rgba(0, 124, 42, 0.1); /* Verde (0,124,42) com 10% de opacidade */
+            /* ALTERAÇÃO: Fundo Verde 80% e Azul 70% */
+            background: linear-gradient(135deg, rgba(0, 124, 42, 0.8) 0%, rgba(0, 42, 124, 0.7) 100%);
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         /* 4a. Zonas do Cabeçalho (Esquerda, Centro, Direita) */
-        /* Usamos flex-basis para dar 1/3 do espaço para cada zona */
         .header-left, .header-right {
             flex-basis: 33.3%;
         }
@@ -75,41 +72,40 @@
 
         /* 4b. Logo (Zona Central) */
         .logo {
-            max-width: 15%; /* Mantém o tamanho original relativo ao poster */
+            max-width: 15%; 
             height: auto;
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
-            /* O logo é o item do meio no flexbox */
         }
 
-        /* 4c. NOVO: Título "CAMPEÕES" */
+        /* 4c. Título "CAMPEÕES" */
         .header-title {
-            color: #002a7c; /* Azul 80% */
-            font-size: 3vw; /* Tamanho relativo ao poster */
+            /* ALTERAÇÃO: Cor branca para legibilidade no novo fundo */
+            color: #FFFFFF; 
+            font-size: 3vw; 
             margin: 0;
-            /* Sombra clara, já que o texto é escuro */
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3); 
+            /* Sombra escura para destacar no fundo */
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); 
         }
 
-        /* 4d. NOVO: Estilo dos Botões */
+        /* 4d. Estilo dos Botões */
         .btn {
-            display: inline-block; /* Permite aplicar padding e margem */
+            display: inline-block; 
             background-color: #007c2a; /* Verde 100% */
             color: white;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.4); /* Sombra no texto do botão */
-            padding: 0.8vw 1.5vw; /* Espaçamento interno relativo */
-            text-decoration: none; /* Remove sublinhado do link */
+            text-shadow: 0 1px 2px rgba(0,0,0,0.4); 
+            padding: 0.8vw 1.5vw; 
+            text-decoration: none; 
             border-radius: 5px;
-            font-size: 1.2vw; /* Tamanho da fonte relativo */
-            margin-left: 1vw; /* Espaço entre os botões */
-            transition: background-color 0.3s ease; /* Efeito suave no hover */
+            font-size: 1.2vw; 
+            margin-left: 1vw; 
+            transition: background-color 0.3s ease; 
         }
 
         .btn:hover {
-            background-color: #009a36; /* Verde um pouco mais claro */
+            background-color: #009a36; 
         }
 
-
-        /* 5. Grelha das Categorias (Layout Simétrico) - Sem alteração */
+        /* 5. Grelha das Categorias (Layout Simétrico) */
         .grid {
             flex-grow: 1;
             display: grid;
@@ -119,9 +115,9 @@
             padding: 1.5%;
         }
 
-        /* 6. Estilo dos Blocos de Categoria - Sem alteração */
+        /* 6. Estilo dos Blocos de Categoria */
         .category {
-            background-color: rgba(0, 0, 0, 0.2); /* Fundo escuro 20% */
+            background-color: rgba(0, 0, 0, 0.2); 
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             display: flex;
@@ -131,7 +127,7 @@
             padding: 10px;
         }
 
-        /* 7. Tipografia dentro dos blocos - Sem alteração */
+        /* 7. Tipografia dentro dos blocos */
         .category h2 {
             font-size: 2.5vw;
             margin: 0;
@@ -187,7 +183,7 @@
                 </div>
                 
                 <div class="category">
-                    <h2>🏓 Adulto B</h2>
+                    <h2>P Adulto B</h2>
                     <p>🥇 Campeão: Carlos Amaral</p>
                 </div>
                 
