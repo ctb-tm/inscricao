@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pôster Torneio CTB</title>
+    <title>Pôster Torneio CTB - Campeões</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,10 @@
 
         /* 1. Configuração Geral */
         body {
-            /* Define a fonte importada (Anton) como padrão */
             font-family: 'Anton', sans-serif; 
             margin: 0;
-            padding: 20px; /* Espaço à volta do poster */
-            background-color: #e9e9e9; /* Fundo da página (fora do poster) */
-            
-            /* Centraliza o poster na página */
+            padding: 20px;
+            background-color: #e9e9e9;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,17 +25,13 @@
         }
 
         /* 2. O Contentor 16:9 */
-        /* Este 'wrapper' força o poster a manter a proporção correta */
         .poster-container {
             width: 100%;
-            max-width: 1280px; /* Define a largura máxima (alta resolução) */
-            
-            /* A propriedade chave para o formato 16:9 */
+            max-width: 1280px;
             aspect-ratio: 16 / 9; 
-            
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra de poster */
-            border-radius: 8px; /* Cantos arredondados */
-            overflow: hidden; /* Garante que nada 'vaze' do poster */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         /* 3. O Pôster (Estilo Principal) */
@@ -46,56 +39,91 @@
             width: 100%;
             height: 100%;
             display: flex;
-            flex-direction: column; /* Organiza (header) em cima e (grid) em baixo */
-            
-            /* Tipografia (branca com sombra leve) */
+            flex-direction: column;
             color: white; 
             text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); 
 
-            /* Fundo: Azul e Vermelho (Moderno e Vibrante) */
-            background: linear-gradient(135deg, #002a7c 0%, #b4001d 100%);
+            /* ALTERAÇÃO: Fundo Verde e Azul */
+            background: linear-gradient(135deg, #007c2a 0%, #002a7c 100%);
         }
 
-        /* 4. Cabeçalho e Logo */
+        /* 4. Cabeçalho e Layout Flex */
         .header {
-            padding: 2%; /* Espaçamento interno relativo */
-            text-align: center;
-            /* Fundo levemente escuro para destacar o logo do gradiente */
-            background-color: rgba(0, 0, 0, 0.15); 
+            padding: 2%;
+            
+            /* NOVO: Layout Flex para alinhar título, logo e botões */
+            display: flex;
+            justify-content: space-between; /* Espaça os 3 blocos */
+            align-items: center; /* Centraliza verticalmente */
+            
+            /* ALTERAÇÃO: Fundo verde 10% */
+            background-color: rgba(0, 124, 42, 0.1); /* Verde (0,124,42) com 10% de opacidade */
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* 4a. Zonas do Cabeçalho (Esquerda, Centro, Direita) */
+        /* Usamos flex-basis para dar 1/3 do espaço para cada zona */
+        .header-left, .header-right {
+            flex-basis: 33.3%;
+        }
+        .header-left {
+            text-align: left;
+        }
+        .header-right {
+            text-align: right;
+        }
+
+        /* 4b. Logo (Zona Central) */
         .logo {
-            /* O logo terá 15% da largura do poster */
-            max-width: 15%; 
-            height: auto; /* Mantém proporção */
-            /* Sombra para destacar o logo do fundo */
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); 
+            max-width: 15%; /* Mantém o tamanho original relativo ao poster */
+            height: auto;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+            /* O logo é o item do meio no flexbox */
         }
 
-        /* 5. Grelha das Categorias (Layout Simétrico) */
+        /* 4c. NOVO: Título "CAMPEÕES" */
+        .header-title {
+            color: #002a7c; /* Azul 100% */
+            font-size: 3vw; /* Tamanho relativo ao poster */
+            margin: 0;
+            /* Sombra clara, já que o texto é escuro */
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3); 
+        }
+
+        /* 4d. NOVO: Estilo dos Botões */
+        .btn {
+            display: inline-block; /* Permite aplicar padding e margem */
+            background-color: #007c2a; /* Verde 100% */
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.4); /* Sombra no texto do botão */
+            padding: 0.8vw 1.5vw; /* Espaçamento interno relativo */
+            text-decoration: none; /* Remove sublinhado do link */
+            border-radius: 5px;
+            font-size: 1.2vw; /* Tamanho da fonte relativo */
+            margin-left: 1vw; /* Espaço entre os botões */
+            transition: background-color 0.3s ease; /* Efeito suave no hover */
+        }
+
+        .btn:hover {
+            background-color: #009a36; /* Verde um pouco mais claro */
+        }
+
+
+        /* 5. Grelha das Categorias (Layout Simétrico) - Sem alteração */
         .grid {
-            flex-grow: 1; /* Faz a grelha ocupar o espaço restante */
+            flex-grow: 1;
             display: grid;
-            
-            /* Layout limpo: 3 colunas de tamanho igual */
             grid-template-columns: repeat(3, 1fr); 
-            
-            /* Layout limpo: 2 linhas de tamanho igual */
             grid-template-rows: repeat(2, 1fr); 
-            
-            gap: 1.5%; /* Espaçamento entre os blocos */
-            padding: 1.5%; /* Espaçamento interno da grelha */
+            gap: 1.5%;
+            padding: 1.5%;
         }
 
-        /* 6. Estilo dos Blocos de Categoria */
+        /* 6. Estilo dos Blocos de Categoria - Sem alteração */
         .category {
-            /* Fundo semi-transparente para legibilidade */
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.2); /* Fundo escuro 20% */
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            
-            /* Centraliza o texto dentro de cada bloco */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -103,18 +131,15 @@
             padding: 10px;
         }
 
-        /* 7. Tipografia dentro dos blocos */
-        /* Usamos 'vw' (viewport width) para que o texto 
-           se ajuste ao tamanho do poster */
+        /* 7. Tipografia dentro dos blocos - Sem alteração */
         .category h2 {
-            font-size: 2.5vw; /* Título da categoria */
+            font-size: 2.5vw;
             margin: 0;
         }
 
         .category p {
-            font-size: 1.8vw; /* Nome do campeão */
+            font-size: 1.8vw;
             margin: 0;
-            /* O ícone 🥇 já vem do HTML */
         }
     </style>
 </head>
@@ -125,7 +150,18 @@
         <div class="poster">
             
             <header class="header">
+                
+                <div class="header-left">
+                    <h1 class="header-title">CAMPEÕES</h1>
+                </div>
+
                 <img src="ctb.png" alt="Logo Clube dos Tenistas da Bahia (CTB)" class="logo">
+
+                <div class="header-right">
+                    <a href="resultadoscompletos.html" class="btn">Resultados Completos</a>
+                    <a href="fotosresultados.html" class="btn">Fotos</a>
+                </div>
+
             </header>
 
             <main class="grid">
