@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos - Torneio CTB</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- DOCUMENTAÇÃO DO CÓDIGO --- */
+
+        /* 1. Configuração Geral */
+        body {
+            font-family: 'Anton', sans-serif;
+            margin: 0;
+            padding: 0;
+            
+            /* Fundo da página: Gradiente Verde 70% para Azul 60% */
+            background: linear-gradient(135deg, rgba(0, 124, 42, 0.7) 0%, rgba(0, 42, 124, 0.6) 100%);
+            color: white; 
+            min-height: 100vh;
+        }
+
+        /* 2. Cabeçalho */
+        .header {
+            /* Fundo verde 70% (para consistência) */
+            background-color: rgba(0, 124, 42, 0.7); 
+            display: grid;
+            grid-template-columns: 1fr auto 1fr; /* (logo, título, espaço) */
+            align-items: center;
+            padding: 10px 3%;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* 2a. Logo no Cabeçalho (Lado Esquerdo) */
+        .logo {
+            max-height: 70px;
+            width: auto;
+            grid-column: 1 / 2;
+            justify-self: start;
+        }
+
+        /* 2b. Título no Cabeçalho (Centralizado) */
+        .header h1 {
+            grid-column: 2 / 3;
+            color: white; /* Fontes Brancas */
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* 3. Contentor Principal (Grelha de Fotos) */
+        .photo-grid {
+            display: grid;
+            /* Grelha responsiva */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 30px;
+        }
+
+        /* 4. Caixa de Categoria (Box Verde 10%) */
+        .photo-box {
+            /* Fundo Verde 10% */
+            background-color: rgba(0, 124, 42, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            overflow: hidden; /* Garante que o título e imagem ficam dentro */
+        }
+
+        /* 4a. Título da Caixa (Fundo Verde 80% com Fonte Amarela) */
+        .box-title {
+            /* Fundo Verde 80% */
+            background-color: rgba(0, 124, 42, 0.8);
+            padding: 15px 20px;
+        }
+
+        .box-title h2 {
+            color: #FFFF00; /* Fonte Amarela */
+            margin: 0;
+            font-size: 2rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+
+        /* 4b. Imagem da Caixa */
+        .photo-image img {
+            width: 100%; /* Faz a imagem ocupar 100% da largura da caixa */
+            height: auto; /* Mantém a proporção */
+            display: block; /* Remove espaço extra em baixo da imagem */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="ctb1.png" alt="Logo CTB" class="logo">
+        <h1>FOTOS</h1>
+    </header>
+
+    <main class="photo-grid">
+
+        <div class="photo-box">
+            <div class="box-title">
+                <h2>Sub-13</h2> 
+            </div>
+            <div class="photo-image">
+                <img src="3.jpeg" alt="Foto da categoria Sub-13">
+            </div>
+        </div>
+
+        <div class="photo-box">
+            <div class="box-title">
+                <h2>Sub-15</h2>
+            </div>
+            <div class="photo-image">
+                <img src="4.jpeg" alt="Foto da categoria Sub-15">
+            </div>
+        </div>
+
+        <div class="photo-box">
+            <div class="box-title">
+                <h2>Adulto A</h2>
+            </div>
+            <div class="photo-image">
+                <img src="1.jpeg" alt="Foto da categoria Adulto A">
+            </div>
+        </div>
+
+        <div class="photo-box">
+            <div class="box-title">
+                <h2>Adulto B</h2>
+            </div>
+            <div class="photo-image">
+                <img src="2.jpeg" alt="Foto da categoria Adulto B">
+            </div>
+        </div>
+
+        <div class="photo-box">
+            <div class="box-title">
+                <h2>Veterano</h2>
+            </div>
+            <div class="photo-image">
+                <img src="3.jpeg" alt="Foto da categoria Veterano">
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
