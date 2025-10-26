@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados Completos - Torneio CTB</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- DOCUMENTAÇÃO DO CÓDIGO --- */
+
+        /* 1. Configuração Geral */
+        body {
+            font-family: 'Anton', sans-serif;
+            margin: 0;
+            padding: 0;
+            
+            /* Fundo da página: Gradiente Verde 70% para Azul 60% */
+            background: linear-gradient(135deg, rgba(0, 124, 42, 0.7) 0%, rgba(0, 42, 124, 0.6) 100%);
+            color: white; /* Cor de texto padrão */
+            min-height: 100vh; /* Garante que o gradiente preenche a tela */
+        }
+
+        /* 2. Cabeçalho */
+        .header {
+            /* Fundo Verde 70% */
+            background-color: rgba(0, 124, 42, 0.7);
+            
+            /* Layout: Grelha de 3 colunas para alinhar (logo, título, espaço) */
+            display: grid;
+            grid-template-columns: 1fr auto 1fr; /* Coluna 1, Coluna 2 (auto), Coluna 3 */
+            align-items: center;
+            padding: 10px 3%; /* Espaçamento interno */
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* 2a. Logo no Cabeçalho (Lado Esquerdo) */
+        .logo {
+            max-height: 70px; /* Altura máxima do logo */
+            width: auto;
+            grid-column: 1 / 2; /* Coloca o logo na primeira coluna */
+            justify-self: start; /* Alinha à esquerda da sua coluna */
+        }
+
+        /* 2b. Título no Cabeçalho (Centralizado) */
+        .header h1 {
+            grid-column: 2 / 3; /* Coloca o título na coluna central */
+            color: white;
+            font-size: 2.5rem; /* Tamanho da fonte (relativo) */
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* 3. Contentor Principal (Grelha de Resultados) */
+        .results-grid {
+            display: grid;
+            /* Grelha responsiva: 
+               - Tenta criar colunas de no mínimo 350px.
+               - Ajusta-se automaticamente (auto-fit).
+               - Em telemóveis, fica com 1 coluna.
+               - Em ecrãs maiores, cria 2, 3 ou mais colunas.
+            */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px; /* Espaço entre as caixas */
+            padding: 30px; /* Espaço à volta da grelha */
+        }
+
+        /* 4. Caixa de Categoria (Box Verde 10%) */
+        .category-box {
+            /* Fundo Verde 10% */
+            background-color: rgba(0, 124, 42, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            overflow: hidden; /* Garante que o título não "vaza" */
+        }
+
+        /* 4a. Título da Caixa (Fundo Box com Fonte Amarela) */
+        .box-title {
+            /* Fundo escuro para destacar o título */
+            background-color: rgba(0, 0, 0, 0.3); 
+            padding: 15px 20px;
+        }
+
+        .box-title h2 {
+            color: #FFFF00; /* Fonte Amarela */
+            margin: 0;
+            font-size: 2rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+
+        /* 4b. Conteúdo da Caixa (Lista de Vencedores) */
+        .box-content {
+            padding: 20px;
+        }
+
+        .box-content ul {
+            list-style: none; /* Remove as "bolinhas" padrão da lista */
+            padding: 0;
+            margin: 0;
+        }
+
+        .box-content li {
+            font-size: 1.4rem; /* Tamanho do nome dos vencedores */
+            margin-bottom: 12px;
+            line-height: 1.4; /* Espaçamento entre linhas */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="ctb1.png" alt="Logo CTB" class="logo">
+        <h1>Resultados Completos</h1>
+        </header>
+
+    <main class="results-grid">
+
+        <div class="category-box">
+            <div class="box-title">
+                <h2>👦 Sub-13</h2>
+            </div>
+            <div class="box-content">
+                <ul>
+                    <li>🥇 Davi Lobo</li>
+                    <li>🥈 Kennedy Abraão</li>
+                    <li>🥉 Bento Aragão e Arthur Eduardo</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="category-box">
+            <div class="box-title">
+                <h2>💪 Sub-15</h2>
+            </div>
+            <div class="box-content">
+                <ul>
+                    <li>🥇 Ailan Rian</li>
+                    <li>🥈 Thiago Silva</li>
+                    <li>🥉 Enzo Bonfim e Mateus Figueiredo</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="category-box">
+            <div class="box-title">
+                <h2>🚀 Sub-19</h2>
+            </div>
+            <div class="box-content">
+                <ul>
+                    <li>🥇 Kayan França</li>
+                    <li>🥈 Lucas Julião</li>
+                    <li>🥉 Leonardo Costard e Enzo Nascimento</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="category-box">
+            <div class="box-title">
+                <h2>🎯 Adulto A</h2>
+            </div>
+            <div class="box-content">
+                <ul>
+                    <li>🥇 Guilherme Chenaud</li>
+                    <li>🥈 Lucas Carvalho</li>
+                    <li>🥉 Adalberto Machado e Lucas Valêncio</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="category-box">
+            <div class="box-title">
+                <h2>🏓 Adulto B</h2>
+            </div>
+            <div class="box-content">
+                <ul>
+                    <li>🥇 Carlos Amaral</li>
+                    <li>🥈 Lucas Nascimento</li>
+                    <li>🥉 Gilton Lima e Renato Simões</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="category-box">
+            <div class="box-title">
+                <h2>🧠 Veterano</h2>
+            </div>
+            <div class="box-content">
+                <ul>
+                    <li>🥇 Guilherme Chenaud</li>
+                    <li>🥈 Edjailson Arruda</li>
+                    <li>🥉 Fernando Simões e Eder Holanda</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
